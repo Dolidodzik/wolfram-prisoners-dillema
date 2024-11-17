@@ -206,13 +206,13 @@ Cell[BoxData[
    RowBox[{"rounding", " ", "precision"}], " ", "*)"}], "\[IndentingNewLine]", 
   RowBox[{
    RowBox[{
-    RowBox[{"eps", "=", "0.01"}], ";"}], 
-   StyleBox["\[IndentingNewLine]",
-    Background->RGBColor[1, 1, 0]], 
+    RowBox[{"eps", "=", "0.01"}], ";"}], "\[IndentingNewLine]", 
    RowBox[{"(*", " ", 
     RowBox[{
     "probabilities", " ", "of", " ", "cooperation", " ", "in", " ", "first", 
-     " ", "step"}], " ", "*)"}], "\[IndentingNewLine]", 
+     " ", "step"}], " ", "*)"}], 
+   StyleBox["\[IndentingNewLine]",
+    Background->RGBColor[1, 1, 0]], 
    RowBox[{
     RowBox[{"pc", "=", "1"}], ";", 
     RowBox[{"qc", "=", "1"}], ";"}], "\[IndentingNewLine]", 
@@ -782,8 +782,13 @@ Cell[BoxData[{
      RowBox[{"\"\<q4\>\"", "->", 
       RowBox[{"-", "1"}]}]}], "|>"}]}], ";"}], "\[IndentingNewLine]", 
  RowBox[{
+  RowBox[{"iterationCount", " ", "=", " ", "20"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"playerXpoints", " ", "=", " ", "0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
   RowBox[{
-   RowBox[{"iterationCount", " ", "=", " ", "20"}], ";"}], 
+   RowBox[{"playerYpoints", " ", "=", " ", "0"}], ";"}], 
   "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
   RowBox[{
@@ -1292,8 +1297,11 @@ Cell[BoxData[{
          RowBox[{
           RowBox[{"previousParams", "[", "\"\<q4\>\"", "]"}], "!=", "q4"}]}], 
         ",", "\[IndentingNewLine]", "\[IndentingNewLine]", 
-        "\[IndentingNewLine]", 
         RowBox[{
+         RowBox[{"playerXpoints", " ", "=", " ", "0"}], ";", 
+         "\[IndentingNewLine]", 
+         RowBox[{"playerYpoints", " ", "=", " ", "0"}], ";", 
+         "\[IndentingNewLine]", 
          RowBox[{"historyx", "=", 
           RowBox[{"{", "}"}]}], ";", "\n", "       ", 
          RowBox[{"historyy", "=", 
@@ -1392,8 +1400,100 @@ Cell[BoxData[{
                     RowBox[{"Last", "[", "historyy", "]"}], "==", 
                     "\"\<D\>\""}], ",", "q4"}], " ", 
                     RowBox[{"(*", "dd", "*)"}], "]"}]}], "]"}]}], ",", 
-                "\"\<C\>\"", ",", "\"\<D\>\""}], "]"}]}], "]"}], ";"}]}], 
-          "]"}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+                "\"\<C\>\"", ",", "\"\<D\>\""}], "]"}]}], "]"}], ";", 
+            "\[IndentingNewLine]", 
+            RowBox[{"(*", 
+             RowBox[{
+             "Calculate", " ", "the", " ", "payoffs", " ", "for", " ", "this",
+               " ", "round"}], "*)"}], 
+            RowBox[{"playerXpoints", "+=", 
+             RowBox[{"Which", "[", 
+              RowBox[{
+               RowBox[{
+                RowBox[{
+                 RowBox[{"Last", "[", "historyx", "]"}], "==", "\"\<C\>\""}], 
+                "&&", 
+                RowBox[{
+                 RowBox[{"Last", "[", "historyy", "]"}], "==", 
+                 "\"\<C\>\""}]}], ",", 
+               RowBox[{"sx", "[", 
+                RowBox[{"[", "1", "]"}], "]"}], ",", 
+               RowBox[{"(*", "R", "*)"}], 
+               RowBox[{
+                RowBox[{
+                 RowBox[{"Last", "[", "historyx", "]"}], "==", "\"\<C\>\""}], 
+                "&&", 
+                RowBox[{
+                 RowBox[{"Last", "[", "historyy", "]"}], "==", 
+                 "\"\<D\>\""}]}], ",", 
+               RowBox[{"sx", "[", 
+                RowBox[{"[", "2", "]"}], "]"}], ",", 
+               RowBox[{"(*", "S", "*)"}], 
+               RowBox[{
+                RowBox[{
+                 RowBox[{"Last", "[", "historyx", "]"}], "==", "\"\<D\>\""}], 
+                "&&", 
+                RowBox[{
+                 RowBox[{"Last", "[", "historyy", "]"}], "==", 
+                 "\"\<C\>\""}]}], ",", 
+               RowBox[{"sx", "[", 
+                RowBox[{"[", "3", "]"}], "]"}], ",", 
+               RowBox[{"(*", "T", "*)"}], 
+               RowBox[{
+                RowBox[{
+                 RowBox[{"Last", "[", "historyx", "]"}], "==", "\"\<D\>\""}], 
+                "&&", 
+                RowBox[{
+                 RowBox[{"Last", "[", "historyy", "]"}], "==", 
+                 "\"\<D\>\""}]}], ",", 
+               RowBox[{"sx", "[", 
+                RowBox[{"[", "4", "]"}], "]"}]}], "  ", 
+              RowBox[{"(*", "P", "*)"}], "]"}]}], ";", "\[IndentingNewLine]", 
+            
+            RowBox[{"playerYpoints", "+=", 
+             RowBox[{"Which", "[", 
+              RowBox[{
+               RowBox[{
+                RowBox[{
+                 RowBox[{"Last", "[", "historyx", "]"}], "==", "\"\<C\>\""}], 
+                "&&", 
+                RowBox[{
+                 RowBox[{"Last", "[", "historyy", "]"}], "==", 
+                 "\"\<C\>\""}]}], ",", 
+               RowBox[{"sy", "[", 
+                RowBox[{"[", "1", "]"}], "]"}], ",", 
+               RowBox[{"(*", "R", "*)"}], 
+               RowBox[{
+                RowBox[{
+                 RowBox[{"Last", "[", "historyx", "]"}], "==", "\"\<C\>\""}], 
+                "&&", 
+                RowBox[{
+                 RowBox[{"Last", "[", "historyy", "]"}], "==", 
+                 "\"\<D\>\""}]}], ",", 
+               RowBox[{"sy", "[", 
+                RowBox[{"[", "2", "]"}], "]"}], ",", 
+               RowBox[{"(*", "S", "*)"}], 
+               RowBox[{
+                RowBox[{
+                 RowBox[{"Last", "[", "historyx", "]"}], "==", "\"\<D\>\""}], 
+                "&&", 
+                RowBox[{
+                 RowBox[{"Last", "[", "historyy", "]"}], "==", 
+                 "\"\<C\>\""}]}], ",", 
+               RowBox[{"sy", "[", 
+                RowBox[{"[", "3", "]"}], "]"}], ",", 
+               RowBox[{"(*", "T", "*)"}], 
+               RowBox[{
+                RowBox[{
+                 RowBox[{"Last", "[", "historyx", "]"}], "==", "\"\<D\>\""}], 
+                "&&", 
+                RowBox[{
+                 RowBox[{"Last", "[", "historyy", "]"}], "==", 
+                 "\"\<D\>\""}]}], ",", 
+               RowBox[{"sy", "[", 
+                RowBox[{"[", "4", "]"}], "]"}]}], "  ", 
+              RowBox[{"(*", "P", "*)"}], "]"}]}], ";"}]}], "]"}], ";", "\n", 
+         "\[IndentingNewLine]", 
          RowBox[{"previousParams", "=", 
           RowBox[{"<|", 
            RowBox[{
@@ -1404,8 +1504,8 @@ Cell[BoxData[{
             RowBox[{"\"\<q1\>\"", "->", "q1"}], ",", 
             RowBox[{"\"\<q2\>\"", "->", "q2"}], ",", 
             RowBox[{"\"\<q3\>\"", "->", "q3"}], ",", 
-            RowBox[{"\"\<q4\>\"", "->", "q4"}]}], "|>"}]}], ";"}]}], 
-       "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+            RowBox[{"\"\<q4\>\"", "->", "q4"}]}], "|>"}]}], ";"}]}], "\n", 
+       "]"}], ";", "\[IndentingNewLine]", 
       RowBox[{"Pause", "[", "0.1", "]"}], ";", "\[IndentingNewLine]", 
       "\[IndentingNewLine]", "\[IndentingNewLine]", 
       RowBox[{"If", "[", 
@@ -1533,6 +1633,18 @@ Cell[BoxData[{
              RowBox[{"FontSize", "->", "14"}], ",", "Bold"}], "]"}], ",", 
            RowBox[{"Spacer", "[", "10", "]"}], ",", 
            RowBox[{"(*", 
+            RowBox[{"Display", " ", "Player", " ", "Scores"}], "*)"}], 
+           RowBox[{"Style", "[", 
+            RowBox[{
+             RowBox[{"Row", "[", 
+              RowBox[{"{", 
+               RowBox[{
+               "\"\<Player X Score: \>\"", ",", "playerXpoints", ",", 
+                "\"\< | Player Y Score: \>\"", ",", "playerYpoints"}], "}"}], 
+              "]"}], ",", 
+             RowBox[{"FontSize", "->", "12"}], ",", "Bold"}], "]"}], ",", 
+           RowBox[{"Spacer", "[", "10", "]"}], ",", 
+           RowBox[{"(*", 
             RowBox[{
             "Check", " ", "if", " ", "historyx", " ", "and", " ", "historyy", 
              " ", "are", " ", "valid"}], "*)"}], 
@@ -1576,8 +1688,8 @@ Cell[BoxData[{
                 RowBox[{"aren", "'"}], "t", " ", "met"}], ",", 
                RowBox[{
                "do", " ", "not", " ", "display", " ", "the", " ", "table"}]}],
-               "*)"}], "Nothing"}], "]"}]}], "}"}], "]"}]}], "\n", "\n", "\n",
-        "\n", "\[IndentingNewLine]", "\n", "]"}]}]}], "]"}], ",", 
+               "*)"}], "Nothing"}], "]"}]}], "}"}], "]"}]}], 
+       "\[IndentingNewLine]", "\n", "]"}]}]}], "]"}], ",", 
    "\[IndentingNewLine]", "\[IndentingNewLine]", 
    RowBox[{"(*", " ", "Controls", " ", "*)"}], "\[IndentingNewLine]", 
    RowBox[{"Row", "[", 
@@ -1620,9 +1732,7 @@ Cell[BoxData[{
        RowBox[{"10", "\[Rule]", "\"\<EXT-2\>\""}], ",", 
        RowBox[{"11", "\[Rule]", "\"\<EXT-3\>\""}], ",", 
        RowBox[{"12", "\[Rule]", "\"\<EXT-4\>\""}], ",", 
-       RowBox[{"13", "\[Rule]", "\"\<EXT-5\>\""}], ",", 
-       RowBox[{"14", "\[Rule]", "\"\<RAND\>\""}], ",", 
-       RowBox[{"15", "\[Rule]", "\"\<N1\>\""}]}], "}"}], ",", 
+       RowBox[{"13", "\[Rule]", "\"\<EXT-5\>\""}]}], "}"}], ",", 
      RowBox[{"BaseStyle", "\[Rule]", "6"}]}], "}"}], ",", 
    "\[IndentingNewLine]", "\[IndentingNewLine]", 
    RowBox[{"Row", "[", 
@@ -2064,8 +2174,12 @@ Cell[BoxData[{
    3.940841689532345*^9, 3.94084169177325*^9}, {3.940841732549983*^9, 
    3.940841732701673*^9}, {3.94084187510816*^9, 3.940841876704823*^9}, {
    3.940841955823534*^9, 3.940842084071451*^9}, 3.940842276843245*^9, {
-   3.940842561808428*^9, 3.940842599104786*^9}},
- CellLabel->"In[62]:=",
+   3.940842561808428*^9, 3.940842599104786*^9}, {3.940845766322982*^9, 
+   3.94084579802768*^9}, 3.9408463712430553`*^9, {3.940846451019217*^9, 
+   3.940846498291885*^9}, 3.940846563182106*^9, {3.940846641785034*^9, 
+   3.9408466426393147`*^9}, 3.940846674896921*^9, {3.94084681765359*^9, 
+   3.940846823495429*^9}, 3.940846866999515*^9},
+ CellLabel->"In[35]:=",
  CellID->210222468,ExpressionUUID->"93811599-98a6-4f5c-8018-fd781a194dd0"],
 
 Cell[BoxData[
@@ -2073,12 +2187,11 @@ Cell[BoxData[
   StyleBox[
    DynamicModuleBox[{$CellContext`graph$$ = 
     False, $CellContext`iterationCount$$ = 20, $CellContext`p1$$ = 
-    0.5, $CellContext`p2$$ = 0.5, $CellContext`p3$$ = 0.5, $CellContext`p4$$ =
-     0.5, $CellContext`q1$$ = 0.875, $CellContext`q2$$ = 
-    0.4375, $CellContext`q3$$ = 0.375, $CellContext`q4$$ = 
-    0, $CellContext`seed$$ = 1, $CellContext`stratx$$ = 
-    14, $CellContext`straty$$ = 10, Typeset`show$$ = True, 
-    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    1, $CellContext`p2$$ = 1, $CellContext`p3$$ = 1, $CellContext`p4$$ = 
+    1, $CellContext`q1$$ = 0.75, $CellContext`q2$$ = 0.25, $CellContext`q3$$ =
+     0.5, $CellContext`q4$$ = 0.25, $CellContext`seed$$ = 
+    2, $CellContext`stratx$$ = 1, $CellContext`straty$$ = 7, Typeset`show$$ = 
+    True, Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
     Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
     "\"untitled\"", Typeset`specs$$ = {{
       Hold[
@@ -2091,8 +2204,8 @@ Cell[BoxData[
       7 -> "SET-2", 8 -> "SET-2.5", 9 -> "SET-3"}, ControlType -> 
       SetterBar}, {{
        Hold[$CellContext`stratx$$], Null, "extortionate"}, {
-      10 -> "EXT-2", 11 -> "EXT-3", 12 -> "EXT-4", 13 -> "EXT-5", 14 -> 
-       "RAND", 15 -> "N1"}, ControlType -> PopupMenu}, {
+      10 -> "EXT-2", 11 -> "EXT-3", 12 -> "EXT-4", 13 -> "EXT-5"}, 
+      ControlType -> SetterBar}, {
       Hold[
        Row[{
          Spacer[{25, 0}], 
@@ -2185,7 +2298,7 @@ $CellContext`previousParams = <|
           "q2" -> -1, "q3" -> -1, "q4" -> -1|>], ControlType -> InputField}, {
      
       Hold[$CellContext`seed$$], 1, 100, 1, ControlType -> None}}, 
-    Typeset`size$$ = {385., {429.2238281249999, 434.8488281249999}}, 
+    Typeset`size$$ = {385., {447.84179687499994`, 453.46679687499994`}}, 
     Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = False, 
     Typeset`keyframeActionsQ$$ = False, Typeset`keyframeList$$ = {}}, 
     DynamicBox[Manipulate`ManipulateBoxes[
@@ -2312,8 +2425,9 @@ $CellContext`p4$$} = {0.5, 0.5, 0.5, 0.5}]; If[
             "q1"] != $CellContext`q1$$, $CellContext`previousParams[
             "q2"] != $CellContext`q2$$, $CellContext`previousParams[
             "q3"] != $CellContext`q3$$, $CellContext`previousParams[
-            "q4"] != $CellContext`q4$$], $CellContext`historyx = {}; \
-$CellContext`historyy = {}; 
+            "q4"] != $CellContext`q4$$], $CellContext`playerXpoints = 
+           0; $CellContext`playerYpoints = 
+           0; $CellContext`historyx = {}; $CellContext`historyy = {}; 
           For[$CellContext`i = 
             1, $CellContext`i <= $CellContext`iterationCount$$, 
             Increment[$CellContext`i], AppendTo[$CellContext`historyx, 
@@ -2340,7 +2454,42 @@ $CellContext`historyy = {};
                  Which[
                  Last[$CellContext`historyy] == "C", $CellContext`q2$$, 
                   Last[$CellContext`historyy] == "D", $CellContext`q4$$]], 
-               "C", "D"]]; Null]; $CellContext`previousParams = <|
+               "C", "D"]]; AddTo[$CellContext`playerXpoints, 
+              Which[
+               And[
+               Last[$CellContext`historyx] == "C", 
+                Last[$CellContext`historyy] == "C"], 
+               Part[$CellContext`sx, 1], 
+               And[
+               Last[$CellContext`historyx] == "C", 
+                Last[$CellContext`historyy] == "D"], 
+               Part[$CellContext`sx, 2], 
+               And[
+               Last[$CellContext`historyx] == "D", 
+                Last[$CellContext`historyy] == "C"], 
+               Part[$CellContext`sx, 3], 
+               And[
+               Last[$CellContext`historyx] == "D", 
+                Last[$CellContext`historyy] == "D"], 
+               Part[$CellContext`sx, 4]]]; AddTo[$CellContext`playerYpoints, 
+              Which[
+               And[
+               Last[$CellContext`historyx] == "C", 
+                Last[$CellContext`historyy] == "C"], 
+               Part[$CellContext`sy, 1], 
+               And[
+               Last[$CellContext`historyx] == "C", 
+                Last[$CellContext`historyy] == "D"], 
+               Part[$CellContext`sy, 2], 
+               And[
+               Last[$CellContext`historyx] == "D", 
+                Last[$CellContext`historyy] == "C"], 
+               Part[$CellContext`sy, 3], 
+               And[
+               Last[$CellContext`historyx] == "D", 
+                Last[$CellContext`historyy] == "D"], 
+               Part[$CellContext`sy, 4]]]; 
+            Null]; $CellContext`previousParams = <|
             "p1" -> $CellContext`p1$$, "p2" -> $CellContext`p2$$, 
              "p3" -> $CellContext`p3$$, "p4" -> $CellContext`p4$$, 
              "q1" -> $CellContext`q1$$, "q2" -> $CellContext`q2$$, 
@@ -2387,6 +2536,12 @@ $CellContext`historyy = {}; $CellContext`previousParams = <|
              Row[{"Przyk\[LSlash]adowy wynik ", $CellContext`iterationCount$$,
                 " iteracji:"}], FontSize -> 14, Bold], 
             Spacer[10], 
+            Style[
+             
+             Row[{"Player X Score: ", $CellContext`playerXpoints, 
+               " | Player Y Score: ", $CellContext`playerYpoints}], FontSize -> 
+             12, Bold], 
+            Spacer[10], 
             If[
              And[
              Length[$CellContext`historyx] > 0, Length[$CellContext`historyy] > 
@@ -2409,8 +2564,8 @@ $CellContext`historyy}], {"Round", "Player X", "Player Y"}], Frame -> All,
          6}, {{$CellContext`stratx$$, Null, "equalizer"}, {
          7 -> "SET-2", 8 -> "SET-2.5", 9 -> "SET-3"}, BaseStyle -> 
          6}, {{$CellContext`stratx$$, Null, "extortionate"}, {
-         10 -> "EXT-2", 11 -> "EXT-3", 12 -> "EXT-4", 13 -> "EXT-5", 14 -> 
-          "RAND", 15 -> "N1"}, BaseStyle -> 6}, 
+         10 -> "EXT-2", 11 -> "EXT-3", 12 -> "EXT-4", 13 -> "EXT-5"}, 
+         BaseStyle -> 6}, 
         Row[{
           Spacer[{25, 0}], 
           Button[
@@ -2490,7 +2645,8 @@ $CellContext`previousParams = <|
       "Options" :> {
        ControlPlacement -> Left, BaseStyle -> 13, SynchronousUpdating -> 
         True}, "DefaultOptions" :> {}],
-     ImageSizeCache->{652.79953125, {457.8394531249999, 463.4644531249999}},
+     ImageSizeCache->{
+      652.79953125, {476.45742187499997`, 482.08242187499997`}},
      SingleEvaluation->True],
     Deinitialization:>None,
     DynamicModuleValues:>{},
@@ -2502,9 +2658,10 @@ $CellContext`previousParams = <|
        20, $CellContext`sx = {3, 0, 5, 1}, $CellContext`sy = {3, 5, 0, 
         1}, $CellContext`previousParams = <|
         "p1" -> -1, "p2" -> -1, "p3" -> -1, "p4" -> -1, "q1" -> -1, 
-         "q2" -> -1, "q3" -> -1, 
-         "q4" -> -1|>, $CellContext`historyx = {}, $CellContext`historyy = \
-{}, $CellContext`i = 21, $CellContext`iterationCount$$ = 
+         "q2" -> -1, "q3" -> -1, "q4" -> -1|>, $CellContext`playerXpoints = 
+       0, $CellContext`playerYpoints = 
+       0, $CellContext`historyx = {}, $CellContext`historyy = {}, \
+$CellContext`i = 21, $CellContext`iterationCount$$ = 
        20, $CellContext`graphplot[
          Pattern[$CellContext`matrix, 
           Blank[]], 
@@ -2587,9 +2744,11 @@ $CellContext`previousParams = <|
  CellChangeTimes->{3.940841435565304*^9, 3.940841531277729*^9, 
   3.9408415669031467`*^9, 3.940841646222994*^9, 3.940841702191855*^9, 
   3.940841735609148*^9, 3.940841879213706*^9, 3.9408420897545424`*^9, 
-  3.94084227980895*^9, 3.9408426112785463`*^9},
- CellLabel->"Out[66]=",
- CellID->95865419,ExpressionUUID->"c012c2cd-bf6d-43ce-8291-1ed596ef3b69"]
+  3.94084227980895*^9, 3.9408426112785463`*^9, 3.940844649435574*^9, 
+  3.940846578579866*^9, 3.9408466794276323`*^9, 3.940846827825602*^9, 
+  3.940846869950013*^9},
+ CellLabel->"Out[41]=",
+ CellID->594043792,ExpressionUUID->"b49f079b-e960-4c65-a6c5-7c5b5085e996"]
 }, Open  ]],
 
 Cell[BoxData[""], "Input",
@@ -12957,9 +13116,8 @@ Cell[BoxData[
                     StripOnInput -> False]}, "RowDefault"]}, {
                     TemplateBox[{
                     CheckboxBox[False, {False, "Prime Numbers"}], "\" \"", 
-                    StyleBox[
-                    "\"Prime Numbers\"", FontSize -> 12, Editable -> False, 
-                    StripOnInput -> False]}, "RowDefault"]}, {
+                    StyleBox["\"Prime Numbers\"", FontSize -> 12, Editable -> 
+                    False, StripOnInput -> False]}, "RowDefault"]}, {
                     TemplateBox[{
                     CheckboxBox[False, {False, "Rational Numbers"}], "\" \"", 
                     
@@ -13359,7 +13517,8 @@ Cell[BoxData[
                     StripOnInput -> False]}, "RowDefault"]}, {
                     TemplateBox[{
                     CheckboxBox[False, {False, "Tiling"}], "\" \"", 
-                    StyleBox["\"Tiling\"", FontSize -> 12, Editable -> False, 
+                    StyleBox[
+                    "\"Tiling\"", FontSize -> 12, Editable -> False, 
                     StripOnInput -> False]}, "RowDefault"]}, {
                     TemplateBox[{
                     CheckboxBox[False, {False, "Trees"}], "\" \"", 
@@ -13848,9 +14007,8 @@ Cell[BoxData[
                     False, StripOnInput -> False]}, "RowDefault"]}, {
                     TemplateBox[{
                     CheckboxBox[False, {False, "Data Analysis"}], "\" \"", 
-                    StyleBox[
-                    "\"Data Analysis\"", FontSize -> 12, Editable -> False, 
-                    StripOnInput -> False]}, "RowDefault"]}, {
+                    StyleBox["\"Data Analysis\"", FontSize -> 12, Editable -> 
+                    False, StripOnInput -> False]}, "RowDefault"]}, {
                     TemplateBox[{
                     CheckboxBox[False, {False, "Probability"}], "\" \"", 
                     StyleBox[
@@ -14119,9 +14277,9 @@ Cell[BoxData[
                     TemplateBox[{
                     CheckboxBox[False, {False, "Chemical Engineering"}], 
                     "\" \"", 
-                    StyleBox[
-                    "\"Chemical Engineering\"", FontSize -> 12, Editable -> 
-                    False, StripOnInput -> False]}, "RowDefault"]}, {
+                    StyleBox["\"Chemical Engineering\"", FontSize -> 12, 
+                    Editable -> False, StripOnInput -> False]}, 
+                    "RowDefault"]}, {
                     TemplateBox[{
                     CheckboxBox[False, {False, "Civil Engineering"}], "\" \"", 
                     StyleBox[
@@ -14161,8 +14319,7 @@ Cell[BoxData[
                     "\"Circuit Design\"", FontSize -> 12, Editable -> False, 
                     StripOnInput -> False]}, "RowDefault"]}, {
                     TemplateBox[{
-                    CheckboxBox[False, {False, "Signal Processing"}], "\" \"",
-                     
+                    CheckboxBox[False, {False, "Signal Processing"}], "\" \"", 
                     StyleBox[
                     "\"Signal Processing\"", FontSize -> 12, Editable -> 
                     False, StripOnInput -> False]}, "RowDefault"]}}, 
@@ -14346,9 +14503,10 @@ Cell[BoxData[
                     CheckboxBox[
                     False, {False, "Puzzles and Recreations: Intermediate"}], 
                     "\" \"", 
-                    StyleBox["\"Puzzles and Recreations: Intermediate\"", 
-                    FontSize -> 12, Editable -> False, StripOnInput -> 
-                    False]}, "RowDefault"]}, {
+                    StyleBox[
+                    "\"Puzzles and Recreations: Intermediate\"", FontSize -> 
+                    12, Editable -> False, StripOnInput -> False]}, 
+                    "RowDefault"]}, {
                     TemplateBox[{
                     CheckboxBox[
                     False, {False, "Puzzles and Recreations: Advanced"}], 
@@ -14436,8 +14594,7 @@ Cell[BoxData[
                     OpenerBox[
                     Dynamic[Typeset`var$$]]}}, 
                    GridBoxAlignment -> {"Columns" -> {{Left}}}, AutoDelete -> 
-                   False, 
-                   GridBoxItemSize -> {
+                   False, GridBoxItemSize -> {
                     "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
                    GridBoxSpacings -> {
                     "Columns" -> {{0.2}}, "Rows" -> {{0.5}}}, 
@@ -14986,8 +15143,9 @@ Cell[BoxData[
                     False, StripOnInput -> False]}, "RowDefault"]}, {
                     TemplateBox[{
                     CheckboxBox[False, {False, "Everyday Life"}], "\" \"", 
-                    StyleBox["\"Everyday Life\"", FontSize -> 12, Editable -> 
-                    False, StripOnInput -> False]}, "RowDefault"]}, {
+                    StyleBox[
+                    "\"Everyday Life\"", FontSize -> 12, Editable -> False, 
+                    StripOnInput -> False]}, "RowDefault"]}, {
                     TemplateBox[{
                     CheckboxBox[False, {False, "Geography"}], "\" \"", 
                     StyleBox[
@@ -15123,9 +15281,8 @@ Cell[BoxData[
                     StripOnInput -> False]}, "RowDefault"]}, {
                     TemplateBox[{
                     CheckboxBox[False, {False, "Natural Forms"}], "\" \"", 
-                    StyleBox[
-                    "\"Natural Forms\"", FontSize -> 12, Editable -> False, 
-                    StripOnInput -> False]}, "RowDefault"]}, {
+                    StyleBox["\"Natural Forms\"", FontSize -> 12, Editable -> 
+                    False, StripOnInput -> False]}, "RowDefault"]}, {
                     TemplateBox[{
                     CheckboxBox[False, {False, "Navigation"}], "\" \"", 
                     StyleBox[
@@ -15576,9 +15733,9 @@ Cell[BoxData[
                     PaneSelectorBox[{False -> TagBox[
                     GridBox[{{"\"Electromagnetism\"", 
                     OpenerBox[
-                    Dynamic[Typeset`var$$]]}}, 
-                    GridBoxAlignment -> {"Columns" -> {{Left}}}, AutoDelete -> 
-                    False, GridBoxItemSize -> {"Columns" -> {{Automatic}}, 
+                    Dynamic[Typeset`var$$]]}}, GridBoxAlignment -> {
+                    "Columns" -> {{Left}}}, AutoDelete -> False, 
+                    GridBoxItemSize -> {"Columns" -> {{Automatic}}, 
                     "Rows" -> {{Automatic}}}, GridBoxSpacings -> {
                     "Columns" -> {{0.2}}, "Rows" -> {{0.5}}}, 
                     DefaultBaseStyle -> "OpenerView", 
@@ -15661,15 +15818,15 @@ Cell[BoxData[
                     GridBox[{{
                     TemplateBox[{
                     CheckboxBox[False, {False, "Quantum Mechanics"}], "\" \"", 
-                    StyleBox[
-                    "\"Quantum Mechanics\"", FontSize -> 12, Editable -> 
-                    False, StripOnInput -> False]}, "RowDefault"]}}, 
-                    GridBoxAlignment -> {"Columns" -> {{Left}}}, 
-                    DefaultBaseStyle -> "Column", GridBoxItemSize -> {
-                    "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
-                    "Column"], ImageMargins -> 0], "\[SpanFromLeft]"}}, 
-                    GridBoxAlignment -> {"Columns" -> {{Left}}}, AutoDelete -> 
-                    False, GridBoxItemSize -> {"Columns" -> {{Automatic}}, 
+                    StyleBox["\"Quantum Mechanics\"", FontSize -> 12, 
+                    Editable -> False, StripOnInput -> False]}, 
+                    "RowDefault"]}}, GridBoxAlignment -> {"Columns" -> {{
+                    Left}}}, DefaultBaseStyle -> "Column", 
+                    GridBoxItemSize -> {"Columns" -> {{Automatic}}, 
+                    "Rows" -> {{Automatic}}}], "Column"], ImageMargins -> 0], 
+                    "\[SpanFromLeft]"}}, GridBoxAlignment -> {
+                    "Columns" -> {{Left}}}, AutoDelete -> False, 
+                    GridBoxItemSize -> {"Columns" -> {{Automatic}}, 
                     "Rows" -> {{Automatic}}}, GridBoxSpacings -> {
                     "Columns" -> {{0.2}}, "Rows" -> {{0.5}}}, 
                     DefaultBaseStyle -> "OpenerView", 
@@ -16019,8 +16176,7 @@ Cell[BoxData[
                     StripOnInput -> False]}, "RowDefault"]}, {
                     TemplateBox[{
                     CheckboxBox[False, {False, "Audio"}], "\" \"", 
-                    StyleBox[
-                    "\"Audio\"", FontSize -> 12, Editable -> False, 
+                    StyleBox["\"Audio\"", FontSize -> 12, Editable -> False, 
                     StripOnInput -> False]}, "RowDefault"]}, {
                     TemplateBox[{
                     CheckboxBox[False, {False, "Music Theory"}], "\" \"", 
