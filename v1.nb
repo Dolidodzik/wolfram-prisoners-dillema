@@ -144,7 +144,7 @@ always be 2.\
    3.798124310395321*^9, 3.7981243119549723`*^9}, 3.798289088727434*^9, {
    3.798289164760273*^9, 3.798289187481483*^9}},
  CellID->1210168543,ExpressionUUID->"6c2cbd96-ef38-43c8-bec8-ff595a1ca5e5"]
-}, Closed]],
+}, Open  ]],
 
 Cell[CellGroupData[{
 
@@ -241,7 +241,7 @@ Cell[BoxData[
    3.79431979598018*^9}, {3.794320128745676*^9, 3.794320134905344*^9}, {
    3.7945147900620317`*^9, 3.794514803557638*^9}, {3.7978630799470263`*^9, 
    3.797863088298922*^9}},
- CellLabel->"In[7]:=",
+ CellLabel->"In[1]:=",
  CellID->1680610328,ExpressionUUID->"3e977c58-251d-4146-8def-608890595f72"],
 
 Cell[BoxData[
@@ -754,7 +754,37 @@ control the Flash preview for the Demonstration with the ",
 
 Cell[CellGroupData[{
 
-Cell[BoxData[
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"historyx", "=", 
+   RowBox[{"{", "}"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"historyy", "=", 
+   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"previousParams", "=", 
+   RowBox[{"<|", 
+    RowBox[{
+     RowBox[{"\"\<p1\>\"", "->", 
+      RowBox[{"-", "1"}]}], ",", 
+     RowBox[{"\"\<p2\>\"", "->", 
+      RowBox[{"-", "1"}]}], ",", 
+     RowBox[{"\"\<p3\>\"", "->", 
+      RowBox[{"-", "1"}]}], ",", 
+     RowBox[{"\"\<p4\>\"", "->", 
+      RowBox[{"-", "1"}]}], ",", 
+     RowBox[{"\"\<q1\>\"", "->", 
+      RowBox[{"-", "1"}]}], ",", 
+     RowBox[{"\"\<q2\>\"", "->", 
+      RowBox[{"-", "1"}]}], ",", 
+     RowBox[{"\"\<q3\>\"", "->", 
+      RowBox[{"-", "1"}]}], ",", 
+     RowBox[{"\"\<q4\>\"", "->", 
+      RowBox[{"-", "1"}]}]}], "|>"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"iterationCount", " ", "=", " ", "20"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
   RowBox[{
    RowBox[{"Module", "[", 
@@ -974,34 +1004,6 @@ Cell[BoxData[
       RowBox[{"(*", 
        RowBox[{"Payoff", " ", "vector", " ", "for", " ", "Y"}], "*)"}], 
       "\[IndentingNewLine]", "\[IndentingNewLine]", 
-      RowBox[{"(*", " ", 
-       RowBox[{
-        RowBox[{"p", " ", "-", " ", 
-         RowBox[{
-         "prawdopodobienstwo", " ", "kooperacji", " ", "gracza", " ", "X"}]}],
-         ",", " ", 
-        RowBox[{"gdy", " ", "w", " ", "poprzedniej", " ", 
-         RowBox[{"rundzie", ":"}]}]}], " ", "*)"}], "\[IndentingNewLine]", 
-      RowBox[{"(*", " ", 
-       RowBox[{"p1", " ", "-", " ", 
-        RowBox[{"obaj", " ", "kooperowali"}]}], " ", "*)"}], 
-      "\[IndentingNewLine]", 
-      RowBox[{"(*", " ", 
-       RowBox[{
-        RowBox[{"p2", " ", "-", " ", 
-         RowBox[{"gracz", " ", "X", " ", "oszuka\[LSlash]"}]}], ",", " ", 
-        RowBox[{"gracz", " ", "Y", " ", "kooperowa\[LSlash]"}]}], " ", "*)"}],
-       "\[IndentingNewLine]", 
-      RowBox[{"(*", " ", 
-       RowBox[{
-        RowBox[{"p3", " ", "-", " ", 
-         RowBox[{"gracz", " ", "X", " ", "kooperowa\[LSlash]"}]}], ",", " ", 
-        RowBox[{"gracz", " ", "Y", " ", "oszuka\[LSlash]"}]}], " ", "*)"}], 
-      "\[IndentingNewLine]", 
-      RowBox[{"(*", " ", 
-       RowBox[{"p4", " ", "-", " ", 
-        RowBox[{"obaj", " ", "oszukali"}]}], " ", "*)"}], 
-      "\[IndentingNewLine]", "\[IndentingNewLine]", 
       RowBox[{
       "Which", "[", 
        "                                                                      \
@@ -1118,11 +1120,20 @@ Cell[BoxData[
          RowBox[{"{", 
           RowBox[{"p1", ",", "p2", ",", "p3", ",", "p4"}], "}"}], "=", 
          RowBox[{"{", 
-          RowBox[{"0.68", ",", "0.16", ",", "0.36", ",", "0"}], "}"}]}]}], 
+          RowBox[{"0.68", ",", "0.16", ",", "0.36", ",", "0"}], "}"}]}], ",", 
+        "                                            ", 
+        RowBox[{"(*", 
+         RowBox[{"EXTORT", "-", "5"}], "*)"}], "\[IndentingNewLine]", 
+        "\[IndentingNewLine]", 
+        RowBox[{"stratx", " ", "==", " ", "14"}], ",", " ", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"p1", ",", "p2", ",", "p3", ",", "p4"}], "}"}], "=", 
+         RowBox[{"{", 
+          RowBox[{"0.5", ",", "0.5", ",", "0.5", ",", "0.5"}], "}"}]}]}], 
        "                                             ", 
-       RowBox[{"(*", 
-        RowBox[{"EXTORT", "-", "5"}], "*)"}], "\[IndentingNewLine]", "]"}], 
-      ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"(*", " ", "random", " ", "*)"}], "\[IndentingNewLine]", "]"}],
+       ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
       RowBox[{
       "Which", "[", 
        "                                                                      \
@@ -1240,11 +1251,156 @@ Cell[BoxData[
          RowBox[{"{", 
           RowBox[{"q1", ",", "q2", ",", "q3", ",", "q4"}], "}"}], "=", 
          RowBox[{"{", 
-          RowBox[{"0.68", ",", "0.16", ",", "0.36", ",", "0"}], "}"}]}]}], 
+          RowBox[{"0.68", ",", "0.16", ",", "0.36", ",", "0"}], "}"}]}], ",", 
+        "                                             ", 
+        RowBox[{"(*", 
+         RowBox[{"EXTORT", "-", "5"}], "*)"}], "\[IndentingNewLine]", 
+        "\[IndentingNewLine]", 
+        RowBox[{"straty", " ", "==", " ", "14"}], ",", " ", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"p1", ",", "p2", ",", "p3", ",", "p4"}], "}"}], "=", 
+         RowBox[{"{", 
+          RowBox[{"0.5", ",", "0.5", ",", "0.5", ",", "0.5"}], "}"}]}]}], 
        "                                             ", 
-       RowBox[{"(*", 
-        RowBox[{"EXTORT", "-", "5"}], "*)"}], "\[IndentingNewLine]", "]"}], 
-      ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+       RowBox[{"(*", " ", "random", " ", "*)"}], "\[IndentingNewLine]", "]"}],
+       ";", "\[IndentingNewLine]", "\n", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          RowBox[{"previousParams", "[", "\"\<p1\>\"", "]"}], "!=", "p1"}], "||", 
+         RowBox[{
+          RowBox[{"previousParams", "[", "\"\<p2\>\"", "]"}], "!=", "p2"}], "||", 
+         RowBox[{
+          RowBox[{"previousParams", "[", "\"\<p3\>\"", "]"}], "!=", "p3"}], "||", 
+         RowBox[{
+          RowBox[{"previousParams", "[", "\"\<p4\>\"", "]"}], "!=", "p4"}], "||", 
+         RowBox[{
+          RowBox[{"previousParams", "[", "\"\<q1\>\"", "]"}], "!=", "q1"}], "||", 
+         RowBox[{
+          RowBox[{"previousParams", "[", "\"\<q2\>\"", "]"}], "!=", "q2"}], "||", 
+         RowBox[{
+          RowBox[{"previousParams", "[", "\"\<q3\>\"", "]"}], "!=", "q3"}], "||", 
+         RowBox[{
+          RowBox[{"previousParams", "[", "\"\<q4\>\"", "]"}], "!=", "q4"}]}], 
+        ",", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+        "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"historyx", "=", 
+          RowBox[{"{", "}"}]}], ";", "\n", "       ", 
+         RowBox[{"historyy", "=", 
+          RowBox[{"{", "}"}]}], ";", 
+         RowBox[{"For", "[", 
+          RowBox[{
+           RowBox[{"i", "=", "1"}], ",", 
+           RowBox[{"i", "<=", "iterationCount"}], ",", 
+           RowBox[{"i", "++"}], ",", 
+           RowBox[{"(*", 
+            RowBox[{"Evaluate", " ", 
+             RowBox[{"X", "'"}], "s", " ", "move", " ", "based", " ", "on", 
+             " ", "probabilities"}], "*)"}], 
+           RowBox[{
+            RowBox[{"AppendTo", "[", 
+             RowBox[{"historyx", ",", 
+              RowBox[{"If", "[", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{"RandomReal", "[", "]"}], "<", 
+                 RowBox[{"Which", "[", 
+                  RowBox[{
+                   RowBox[{"i", "==", "1"}], ",", "p1", ",", 
+                   RowBox[{"(*", 
+                    RowBox[{
+                    "First", " ", "iteration", " ", "depends", " ", "on", " ",
+                     "p1"}], "*)"}], 
+                   RowBox[{
+                    RowBox[{"Last", "[", "historyy", "]"}], "==", 
+                    "\"\<C\>\""}], ",", 
+                   RowBox[{"Which", "[", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"Last", "[", "historyx", "]"}], "==", 
+                    "\"\<C\>\""}], ",", "p1", ",", 
+                    RowBox[{"(*", "cc", "*)"}], 
+                    RowBox[{
+                    RowBox[{"Last", "[", "historyx", "]"}], "==", 
+                    "\"\<D\>\""}], ",", "p2"}], " ", 
+                    RowBox[{"(*", "cd", "*)"}], "]"}], ",", 
+                   RowBox[{
+                    RowBox[{"Last", "[", "historyy", "]"}], "==", 
+                    "\"\<D\>\""}], ",", 
+                   RowBox[{"Which", "[", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"Last", "[", "historyx", "]"}], "==", 
+                    "\"\<C\>\""}], ",", "p3", ",", 
+                    RowBox[{"(*", "dc", "*)"}], 
+                    RowBox[{
+                    RowBox[{"Last", "[", "historyx", "]"}], "==", 
+                    "\"\<D\>\""}], ",", "p4"}], " ", 
+                    RowBox[{"(*", "dd", "*)"}], "]"}]}], "]"}]}], ",", 
+                "\"\<C\>\"", ",", "\"\<D\>\""}], "]"}]}], "]"}], ";", 
+            "\[IndentingNewLine]", 
+            RowBox[{"(*", 
+             RowBox[{"Evaluate", " ", 
+              RowBox[{"Y", "'"}], "s", " ", "move", " ", "based", " ", "on", 
+              " ", "probabilities"}], "*)"}], 
+            RowBox[{"AppendTo", "[", 
+             RowBox[{"historyy", ",", 
+              RowBox[{"If", "[", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{"RandomReal", "[", "]"}], "<", 
+                 RowBox[{"Which", "[", 
+                  RowBox[{
+                   RowBox[{"i", "==", "1"}], ",", "q1", ",", 
+                   RowBox[{"(*", 
+                    RowBox[{
+                    "First", " ", "iteration", " ", "depends", " ", "on", " ",
+                     "q1"}], "*)"}], 
+                   RowBox[{
+                    RowBox[{"Last", "[", "historyx", "]"}], "==", 
+                    "\"\<C\>\""}], ",", 
+                   RowBox[{"Which", "[", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"Last", "[", "historyy", "]"}], "==", 
+                    "\"\<C\>\""}], ",", "q1", ",", 
+                    RowBox[{"(*", "cc", "*)"}], 
+                    RowBox[{
+                    RowBox[{"Last", "[", "historyy", "]"}], "==", 
+                    "\"\<D\>\""}], ",", "q3"}], " ", 
+                    RowBox[{"(*", "cd", "*)"}], "]"}], ",", 
+                   RowBox[{
+                    RowBox[{"Last", "[", "historyx", "]"}], "==", 
+                    "\"\<D\>\""}], ",", 
+                   RowBox[{"Which", "[", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"Last", "[", "historyy", "]"}], "==", 
+                    "\"\<C\>\""}], ",", "q2", ",", 
+                    RowBox[{"(*", "dc", "*)"}], 
+                    RowBox[{
+                    RowBox[{"Last", "[", "historyy", "]"}], "==", 
+                    "\"\<D\>\""}], ",", "q4"}], " ", 
+                    RowBox[{"(*", "dd", "*)"}], "]"}]}], "]"}]}], ",", 
+                "\"\<C\>\"", ",", "\"\<D\>\""}], "]"}]}], "]"}], ";"}]}], 
+          "]"}], ";", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+         RowBox[{"previousParams", "=", 
+          RowBox[{"<|", 
+           RowBox[{
+            RowBox[{"\"\<p1\>\"", "->", "p1"}], ",", 
+            RowBox[{"\"\<p2\>\"", "->", "p2"}], ",", 
+            RowBox[{"\"\<p3\>\"", "->", "p3"}], ",", 
+            RowBox[{"\"\<p4\>\"", "->", "p4"}], ",", 
+            RowBox[{"\"\<q1\>\"", "->", "q1"}], ",", 
+            RowBox[{"\"\<q2\>\"", "->", "q2"}], ",", 
+            RowBox[{"\"\<q3\>\"", "->", "q3"}], ",", 
+            RowBox[{"\"\<q4\>\"", "->", "q4"}]}], "|>"}]}], ";"}]}], 
+       "\[IndentingNewLine]", "]"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"Pause", "[", "0.1", "]"}], ";", "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
       RowBox[{"If", "[", 
        RowBox[{"graph", ",", "\[IndentingNewLine]", 
         RowBox[{"(*", 
@@ -1263,38 +1419,34 @@ Cell[BoxData[
           "Show", " ", "transition", " ", "matrix", " ", "and", " ", 
            "charts"}]}], "*)"}], "\[IndentingNewLine]", 
         RowBox[{"Column", "[", 
-         RowBox[{
-          RowBox[{"{", "\[IndentingNewLine]", 
-           RowBox[{
-            RowBox[{"Row", "[", 
-             RowBox[{
-              RowBox[{"{", "\[IndentingNewLine]", 
-               RowBox[{
-                RowBox[{"stratchart", "[", 
-                 RowBox[{
-                  RowBox[{"{", 
-                   RowBox[{"p1", ",", "p2", ",", "p3", ",", "p4"}], "}"}], 
-                  ",", 
-                  RowBox[{"{", 
-                   RowBox[{"q1", ",", "q2", ",", "q3", ",", "q4"}], "}"}]}], 
-                 "]"}], ",", 
-                RowBox[{"Spacer", "[", "20", "]"}], ",", 
-                "\[IndentingNewLine]", 
-                RowBox[{"payoffchart", "[", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"Row", "[", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"stratchart", "[", 
+                RowBox[{
                  RowBox[{"{", 
-                  RowBox[{"xPayoff", ",", "yPayoff"}], "}"}], "]"}]}], 
-               "\[IndentingNewLine]", "}"}], ",", 
-              RowBox[{"Alignment", "\[Rule]", "Bottom"}]}], "]"}], ",", 
-            "\[IndentingNewLine]", 
-            RowBox[{"Text", "@", 
-             RowBox[{"Row", "[", 
-              RowBox[{"{", "\[IndentingNewLine]", 
-               RowBox[{
-                RowBox[{"Labeled", "[", 
-                 RowBox[{
-                  RowBox[{"MatrixForm", "[", 
-                   RowBox[{"transmatrix2", ",", 
-                    RowBox[{"TableHeadings", "\[Rule]", 
+                  RowBox[{"p1", ",", "p2", ",", "p3", ",", "p4"}], "}"}], ",", 
+                 RowBox[{"{", 
+                  RowBox[{"q1", ",", "q2", ",", "q3", ",", "q4"}], "}"}]}], 
+                "]"}], ",", 
+               RowBox[{"Spacer", "[", "20", "]"}], ",", 
+               RowBox[{"payoffchart", "[", 
+                RowBox[{"{", 
+                 RowBox[{"xPayoff", ",", "yPayoff"}], "}"}], "]"}]}], "}"}], 
+             ",", 
+             RowBox[{"Alignment", "->", "Bottom"}]}], "]"}], ",", 
+           RowBox[{"Text", "@", 
+            RowBox[{"Row", "[", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"Labeled", "[", 
+                RowBox[{
+                 RowBox[{"MatrixForm", "[", 
+                  RowBox[{"transmatrix2", ",", 
+                   RowBox[{"TableHeadings", "->", 
                     RowBox[{"{", 
                     RowBox[{
                     RowBox[{"{", 
@@ -1305,39 +1457,121 @@ Cell[BoxData[
                     RowBox[{
                     "\"\<cc\>\"", ",", "\"\<cd\>\"", ",", "\"\<dc\>\"", ",", 
                     "\"\<dd\>\""}], "}"}]}], "}"}]}]}], "]"}], ",", 
-                  "\[IndentingNewLine]", "\"\<transition matrix\\n\>\"", ",", 
-                  
+                 "\"\<transition matrix\\n\>\"", ",", 
+                 RowBox[{"{", 
                   RowBox[{"{", 
-                   RowBox[{"{", 
-                    RowBox[{"Top", ",", "Center"}], "}"}], "}"}]}], "]"}], 
-                ",", "\[IndentingNewLine]", 
-                RowBox[{"Spacer", "[", "50", "]"}], ",", 
-                "\[IndentingNewLine]", 
-                RowBox[{"Labeled", "[", 
-                 RowBox[{
-                  RowBox[{"Style", "[", 
-                   RowBox[{"MatrixForm", "[", 
-                    RowBox[{
-                    RowBox[{"{", "nstepDistr1", " ", "}"}], ",", 
-                    RowBox[{"TableHeadings", "\[Rule]", 
+                   RowBox[{"Top", ",", "Center"}], "}"}], "}"}]}], "]"}], ",", 
+               RowBox[{"Spacer", "[", "50", "]"}], ",", 
+               RowBox[{"Labeled", "[", 
+                RowBox[{
+                 RowBox[{"Style", "[", 
+                  RowBox[{"MatrixForm", "[", 
+                   RowBox[{
+                    RowBox[{"{", "nstepDistr1", "}"}], ",", 
+                    RowBox[{"TableHeadings", "->", 
                     RowBox[{"{", 
                     RowBox[{"None", ",", 
                     RowBox[{"{", 
                     RowBox[{
                     "\"\<cc\>\"", ",", "\"\<cd\>\"", ",", "\"\<dc\>\"", ",", 
                     "\"\<dd\>\""}], "}"}]}], "}"}]}]}], "]"}], "]"}], ",", 
-                  "\[IndentingNewLine]", 
-                  RowBox[{"Style", "[", 
-                   RowBox[{"\"\<stationary distribution\\n\>\"", ",", 
-                    RowBox[{"FontSize", "\[Rule]", "13"}]}], "]"}], ",", 
+                 RowBox[{"Style", "[", 
+                  RowBox[{"\"\<stationary distribution\\n\>\"", ",", 
+                   RowBox[{"FontSize", "->", "13"}]}], "]"}], ",", 
+                 RowBox[{"{", 
                   RowBox[{"{", 
-                   RowBox[{"{", 
-                    RowBox[{"Top", ",", "Center"}], "}"}], "}"}]}], "]"}]}], 
-               "\[IndentingNewLine]", "}"}], "]"}]}]}], "\[IndentingNewLine]",
-            "}"}], ",", 
-          RowBox[{"Alignment", "\[Rule]", "Center"}]}], "]"}]}], 
-       "\[IndentingNewLine]", "]"}]}]}], "]"}], ",", "\[IndentingNewLine]", 
-   "\[IndentingNewLine]", 
+                   RowBox[{"Top", ",", "Center"}], "}"}], "}"}]}], "]"}]}], 
+              "}"}], "]"}]}], ",", 
+           RowBox[{"Spacer", "[", "20", "]"}], ",", 
+           RowBox[{"Row", "[", 
+            RowBox[{"{", 
+             RowBox[{"Button", "[", 
+              RowBox[{"\"\<Re-run Simulation\>\"", ",", 
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"historyx", "=", 
+                  RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+                 RowBox[{"historyy", "=", 
+                  RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+                 RowBox[{"previousParams", "=", 
+                  RowBox[{"<|", 
+                   RowBox[{
+                    RowBox[{"\"\<p1\>\"", "->", 
+                    RowBox[{"-", "1"}]}], ",", 
+                    RowBox[{"\"\<p2\>\"", "->", 
+                    RowBox[{"-", "1"}]}], ",", 
+                    RowBox[{"\"\<p3\>\"", "->", 
+                    RowBox[{"-", "1"}]}], ",", 
+                    RowBox[{"\"\<p4\>\"", "->", 
+                    RowBox[{"-", "1"}]}], ",", 
+                    RowBox[{"\"\<q1\>\"", "->", 
+                    RowBox[{"-", "1"}]}], ",", 
+                    RowBox[{"\"\<q2\>\"", "->", 
+                    RowBox[{"-", "1"}]}], ",", 
+                    RowBox[{"\"\<q3\>\"", "->", 
+                    RowBox[{"-", "1"}]}], ",", 
+                    RowBox[{"\"\<q4\>\"", "->", 
+                    RowBox[{"-", "1"}]}]}], "|>"}]}], ";"}], ")"}], ",", 
+               RowBox[{"Appearance", "->", "\"\<Framed\>\""}], ",", 
+               RowBox[{"Background", "->", "LightBlue"}]}], "]"}], "}"}], 
+            "]"}], ",", 
+           RowBox[{"Spacer", "[", "10", "]"}], ",", 
+           RowBox[{"Style", "[", 
+            RowBox[{
+             RowBox[{"Row", "[", 
+              RowBox[{"{", 
+               RowBox[{
+               "\"\<Przyk\[LSlash]adowy wynik \>\"", ",", "iterationCount", 
+                ",", "\"\< iteracji:\>\""}], "}"}], "]"}], ",", 
+             RowBox[{"FontSize", "->", "14"}], ",", "Bold"}], "]"}], ",", 
+           RowBox[{"Spacer", "[", "10", "]"}], ",", 
+           RowBox[{"(*", 
+            RowBox[{
+            "Check", " ", "if", " ", "historyx", " ", "and", " ", "historyy", 
+             " ", "are", " ", "valid"}], "*)"}], 
+           RowBox[{"If", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{
+               RowBox[{"Length", "[", "historyx", "]"}], ">", "0"}], "&&", 
+              RowBox[{
+               RowBox[{"Length", "[", "historyy", "]"}], ">", "0"}], "&&", 
+              RowBox[{
+               RowBox[{"Length", "[", "historyx", "]"}], "==", 
+               RowBox[{"Length", "[", "historyy", "]"}]}], "&&", 
+              RowBox[{
+               RowBox[{"Length", "[", "historyx", "]"}], "==", 
+               "iterationCount"}]}], ",", 
+             RowBox[{"Grid", "[", 
+              RowBox[{
+               RowBox[{"Prepend", "[", 
+                RowBox[{
+                 RowBox[{"Transpose", "[", 
+                  RowBox[{"{", 
+                   RowBox[{
+                    RowBox[{"Range", "[", "iterationCount", "]"}], ",", 
+                    "historyx", ",", "historyy"}], "}"}], "]"}], ",", 
+                 RowBox[{"{", 
+                  RowBox[{
+                  "\"\<Round\>\"", ",", "\"\<Player X\>\"", ",", 
+                   "\"\<Player Y\>\""}], "}"}]}], "]"}], ",", 
+               RowBox[{"Frame", "->", "All"}], ",", 
+               RowBox[{"Alignment", "->", "Center"}], ",", 
+               RowBox[{"Background", "->", 
+                RowBox[{"{", 
+                 RowBox[{"None", ",", 
+                  RowBox[{"{", 
+                   RowBox[{"LightGray", ",", "None"}], "}"}]}], "}"}]}]}], 
+              "]"}], ",", 
+             RowBox[{"(*", 
+              RowBox[{
+               RowBox[{"If", " ", "conditions", " ", 
+                RowBox[{"aren", "'"}], "t", " ", "met"}], ",", 
+               RowBox[{
+               "do", " ", "not", " ", "display", " ", "the", " ", "table"}]}],
+               "*)"}], "Nothing"}], "]"}]}], "}"}], "]"}]}], "\n", "\n", "\n",
+        "\n", "\[IndentingNewLine]", "\n", "]"}]}]}], "]"}], ",", 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
    RowBox[{"(*", " ", "Controls", " ", "*)"}], "\[IndentingNewLine]", 
    RowBox[{"Row", "[", 
     RowBox[{"{", "\"\<player X strategy\>\"", "}"}], "]"}], ",", 
@@ -1379,7 +1613,8 @@ Cell[BoxData[
        RowBox[{"10", "\[Rule]", "\"\<EXT-2\>\""}], ",", 
        RowBox[{"11", "\[Rule]", "\"\<EXT-3\>\""}], ",", 
        RowBox[{"12", "\[Rule]", "\"\<EXT-4\>\""}], ",", 
-       RowBox[{"13", "\[Rule]", "\"\<EXT-5\>\""}]}], "}"}], ",", 
+       RowBox[{"13", "\[Rule]", "\"\<EXT-5\>\""}], ",", 
+       RowBox[{"14", "\[Rule]", "\"\<RAND\>\""}]}], "}"}], ",", 
      RowBox[{"BaseStyle", "\[Rule]", "6"}]}], "}"}], ",", 
    "\[IndentingNewLine]", "\[IndentingNewLine]", 
    RowBox[{"Row", "[", 
@@ -1515,7 +1750,7 @@ Cell[BoxData[
        RowBox[{"12", "\[Rule]", "\"\<EXT-4\>\""}], ",", 
        RowBox[{"13", "\[Rule]", "\"\<EXT-5\>\""}]}], "}"}], ",", 
      RowBox[{"BaseStyle", "\[Rule]", "6"}]}], "}"}], ",", 
-   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]", 
    RowBox[{"Row", "[", 
     RowBox[{"{", "\[IndentingNewLine]", 
      RowBox[{
@@ -1617,10 +1852,42 @@ Cell[BoxData[
      ",", 
      RowBox[{"BaseStyle", "\[Rule]", "8"}]}], "}"}], ",", 
    "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"iterationCount", ",", "115", ",", "\"\<Iteration Count\>\""}], 
+      "}"}], ",", "1", ",", "1000", ",", "1", ",", 
+     RowBox[{"Appearance", "->", "\"\<Labeled\>\""}], ",", 
+     RowBox[{"ImageSize", "->", "95"}], ",", 
+     RowBox[{"Dynamic", "[", 
+      RowBox[{
+       RowBox[{"historyx", "=", 
+        RowBox[{"{", "}"}]}], ";", 
+       RowBox[{"historyy", "=", 
+        RowBox[{"{", "}"}]}], ";", 
+       RowBox[{"previousParams", "=", 
+        RowBox[{"<|", 
+         RowBox[{
+          RowBox[{"\"\<p1\>\"", "->", 
+           RowBox[{"-", "1"}]}], ",", 
+          RowBox[{"\"\<p2\>\"", "->", 
+           RowBox[{"-", "1"}]}], ",", 
+          RowBox[{"\"\<p3\>\"", "->", 
+           RowBox[{"-", "1"}]}], ",", 
+          RowBox[{"\"\<p4\>\"", "->", 
+           RowBox[{"-", "1"}]}], ",", 
+          RowBox[{"\"\<q1\>\"", "->", 
+           RowBox[{"-", "1"}]}], ",", 
+          RowBox[{"\"\<q2\>\"", "->", 
+           RowBox[{"-", "1"}]}], ",", 
+          RowBox[{"\"\<q3\>\"", "->", 
+           RowBox[{"-", "1"}]}], ",", 
+          RowBox[{"\"\<q4\>\"", "->", 
+           RowBox[{"-", "1"}]}]}], "|>"}]}]}], "]"}]}], "}"}], ",", "\n", 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]", 
    RowBox[{"(*", 
     RowBox[{"Not", " ", "shown", " ", "in", " ", "controls"}], "*)"}], 
-   "                                                          ", 
-   "\[IndentingNewLine]", 
+   "                                                          ", "\n", 
    RowBox[{"{", 
     RowBox[{"seed", ",", "1", ",", "100", ",", "1", ",", 
      RowBox[{"ControlType", "\[Rule]", " ", "None"}]}], "}"}], ",", 
@@ -1630,7 +1897,7 @@ Cell[BoxData[
    RowBox[{"SynchronousUpdating", "\[Rule]", "True"}], ",", 
    "\[IndentingNewLine]", 
    RowBox[{"SaveDefinitions", "\[Rule]", "True"}]}], "\[IndentingNewLine]", 
-  "]"}]], "Input",
+  "]"}]}], "Input",
  TaggingRules->{},
  CellChangeTimes->{{3.784321557247921*^9, 3.7843215581870413`*^9}, {
    3.784321692538258*^9, 3.784321693617734*^9}, {3.7848528132688713`*^9, 
@@ -1754,19 +2021,54 @@ Cell[BoxData[
    3.798049122280031*^9}, {3.7980491775009403`*^9, 3.7980491784476557`*^9}, {
    3.798049225916374*^9, 3.7980492493072023`*^9}, {3.7980492958589973`*^9, 
    3.798049300932151*^9}, {3.798124245409691*^9, 3.798124277463089*^9}, {
-   3.940740500842565*^9, 3.9407406706786213`*^9}},
- CellLabel->"In[11]:=",
+   3.9407531639672813`*^9, 3.940753224265017*^9}, {3.940753326483329*^9, 
+   3.940753352793021*^9}, {3.940753533553135*^9, 3.940753540137092*^9}, {
+   3.940753893265065*^9, 3.940753902713724*^9}, {3.940753933357912*^9, 
+   3.940753955259931*^9}, 3.940753994832234*^9, {3.940754038140415*^9, 
+   3.94075406514141*^9}, {3.940754132550638*^9, 3.940754163735319*^9}, {
+   3.94075446432648*^9, 3.940754478786796*^9}, {3.9407545615041428`*^9, 
+   3.940754562898999*^9}, {3.940754616674913*^9, 3.940754657961849*^9}, {
+   3.940754851029846*^9, 3.940754853573979*^9}, {3.940755077715457*^9, 
+   3.9407550992591543`*^9}, {3.94075519552639*^9, 3.9407551957860107`*^9}, {
+   3.940755263937566*^9, 3.9407552721654263`*^9}, {3.940755645631852*^9, 
+   3.94075566377712*^9}, {3.94075594470275*^9, 3.940755971847211*^9}, {
+   3.940756047769864*^9, 3.94075618317376*^9}, {3.94075633631772*^9, 
+   3.940756361635489*^9}, {3.9407563974250526`*^9, 3.940756403856948*^9}, {
+   3.9408357513706512`*^9, 3.940835779763234*^9}, 3.94083622530287*^9, {
+   3.940836616114204*^9, 3.9408366264249153`*^9}, {3.940837388195022*^9, 
+   3.9408373939024897`*^9}, {3.940837507766749*^9, 3.940837534151306*^9}, {
+   3.940837643489401*^9, 3.9408376881443*^9}, {3.9408377229430437`*^9, 
+   3.940837723725678*^9}, {3.9408377561278563`*^9, 3.94083776856222*^9}, {
+   3.940838025695875*^9, 3.9408380423253613`*^9}, {3.94083815673462*^9, 
+   3.9408381718177233`*^9}, {3.940838367859827*^9, 3.940838371323393*^9}, {
+   3.9408386075815973`*^9, 3.9408386148256474`*^9}, 3.940838902747815*^9, 
+   3.940838933249073*^9, {3.9408390263616123`*^9, 3.9408390522904043`*^9}, {
+   3.940839212292685*^9, 3.940839213958119*^9}, {3.940839249933166*^9, 
+   3.9408392710553837`*^9}, {3.940839357281036*^9, 3.940839364625494*^9}, 
+   3.94083940526974*^9, {3.94083978821484*^9, 3.940839794858481*^9}, {
+   3.940839880641262*^9, 3.94083988266842*^9}, 3.9408401616611137`*^9, 
+   3.940840270918845*^9, {3.940840380648529*^9, 3.940840385408805*^9}, 
+   3.9408404990114317`*^9, {3.940840538013242*^9, 3.940840576661407*^9}, {
+   3.9408406146456842`*^9, 3.940840702522436*^9}, {3.94084111255993*^9, 
+   3.94084111385596*^9}, {3.940841156970377*^9, 3.9408411643768187`*^9}, {
+   3.94084130662819*^9, 3.940841306979609*^9}, {3.940841520651167*^9, 
+   3.9408415645780773`*^9}, {3.9408416337394648`*^9, 3.940841640920158*^9}, {
+   3.940841689532345*^9, 3.94084169177325*^9}, {3.940841732549983*^9, 
+   3.940841732701673*^9}, {3.94084187510816*^9, 3.940841876704823*^9}, {
+   3.940841955823534*^9, 3.940842084071451*^9}, 3.940842276843245*^9},
+ CellLabel->"In[57]:=",
  CellID->210222468,ExpressionUUID->"93811599-98a6-4f5c-8018-fd781a194dd0"],
 
 Cell[BoxData[
  TagBox[
   StyleBox[
-   DynamicModuleBox[{$CellContext`graph$$ = False, $CellContext`p1$$ = 
-    0.75, $CellContext`p2$$ = 0.25, $CellContext`p3$$ = 
-    0.5, $CellContext`p4$$ = 0.25, $CellContext`q1$$ = 1, $CellContext`q2$$ = 
-    0.5625, $CellContext`q3$$ = 0.5, $CellContext`q4$$ = 
-    0.125, $CellContext`seed$$ = 1, $CellContext`stratx$$ = 
-    Null, $CellContext`straty$$ = Null, Typeset`show$$ = True, 
+   DynamicModuleBox[{$CellContext`graph$$ = 
+    False, $CellContext`iterationCount$$ = 20, $CellContext`p1$$ = 
+    0.5, $CellContext`p2$$ = 0.5, $CellContext`p3$$ = 0.5, $CellContext`p4$$ =
+     0.5, $CellContext`q1$$ = 0.7, $CellContext`q2$$ = 
+    0.15, $CellContext`q3$$ = 0.4, $CellContext`q4$$ = 
+    0, $CellContext`seed$$ = 1, $CellContext`stratx$$ = 
+    14, $CellContext`straty$$ = 12, Typeset`show$$ = True, 
     Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
     Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
     "\"untitled\"", Typeset`specs$$ = {{
@@ -1780,8 +2082,8 @@ Cell[BoxData[
       7 -> "SET-2", 8 -> "SET-2.5", 9 -> "SET-3"}, ControlType -> 
       SetterBar}, {{
        Hold[$CellContext`stratx$$], Null, "extortionate"}, {
-      10 -> "EXT-2", 11 -> "EXT-3", 12 -> "EXT-4", 13 -> "EXT-5"}, 
-      ControlType -> SetterBar}, {
+      10 -> "EXT-2", 11 -> "EXT-3", 12 -> "EXT-4", 13 -> "EXT-5", 14 -> 
+       "RAND"}, ControlType -> SetterBar}, {
       Hold[
        Row[{
          Spacer[{25, 0}], 
@@ -1865,14 +2167,22 @@ $CellContext`q4$$}, $CellContext`eps]; $CellContext`straty$$ = 6, ImageSize ->
       Manipulator}, {{
        Hold[$CellContext`graph$$], False, "show"}, {
       False -> "transition matrix", True -> "transition graph"}, ControlType -> 
-      SetterBar}, {
+      SetterBar}, {{
+       Hold[$CellContext`iterationCount$$], 115, "Iteration Count"}, 1, 1000, 
+      1, Appearance -> "Labeled", ImageSize -> 95, 
+      Dynamic[$CellContext`historyx = {}; $CellContext`historyy = {}; \
+$CellContext`previousParams = <|
+         "p1" -> -1, "p2" -> -1, "p3" -> -1, "p4" -> -1, "q1" -> -1, 
+          "q2" -> -1, "q3" -> -1, "q4" -> -1|>], ControlType -> InputField}, {
+     
       Hold[$CellContext`seed$$], 1, 100, 1, ControlType -> None}}, 
-    Typeset`size$$ = {385., {185.77578124999997`, 191.40078124999997`}}, 
+    Typeset`size$$ = {385., {429.2238281249999, 434.8488281249999}}, 
     Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = False, 
     Typeset`keyframeActionsQ$$ = False, Typeset`keyframeList$$ = {}}, 
     DynamicBox[Manipulate`ManipulateBoxes[
      1, StandardForm, 
-      "Variables" :> {$CellContext`graph$$ = False, $CellContext`p1$$ = 
+      "Variables" :> {$CellContext`graph$$ = 
+        False, $CellContext`iterationCount$$ = 115, $CellContext`p1$$ = 
         0.75, $CellContext`p2$$ = 0.25, $CellContext`p3$$ = 
         0.5, $CellContext`p4$$ = 0.25, $CellContext`q1$$ = 
         1, $CellContext`q2$$ = 0.5625, $CellContext`q3$$ = 
@@ -1952,7 +2262,9 @@ $CellContext`p4$$} = {0.8, 0.55, 0.3, 0}, $CellContext`stratx$$ ==
           12, {$CellContext`p1$$, $CellContext`p2$$, $CellContext`p3$$, \
 $CellContext`p4$$} = {0.7, 0.15, 0.4, 0}, $CellContext`stratx$$ == 
           13, {$CellContext`p1$$, $CellContext`p2$$, $CellContext`p3$$, \
-$CellContext`p4$$} = {0.68, 0.16, 0.36, 0}]; 
+$CellContext`p4$$} = {0.68, 0.16, 0.36, 0}, $CellContext`stratx$$ == 
+          14, {$CellContext`p1$$, $CellContext`p2$$, $CellContext`p3$$, \
+$CellContext`p4$$} = {0.5, 0.5, 0.5, 0.5}]; 
         Which[$CellContext`straty$$ == 
           1, {$CellContext`q1$$, $CellContext`q2$$, $CellContext`q3$$, \
 $CellContext`q4$$} = {1, 1, 1, 1}, $CellContext`straty$$ == 
@@ -1977,7 +2289,52 @@ $CellContext`q4$$} = {0.8, 0.55, 0.3, 0}, $CellContext`straty$$ ==
           12, {$CellContext`q1$$, $CellContext`q2$$, $CellContext`q3$$, \
 $CellContext`q4$$} = {0.7, 0.15, 0.4, 0}, $CellContext`straty$$ == 
           13, {$CellContext`q1$$, $CellContext`q2$$, $CellContext`q3$$, \
-$CellContext`q4$$} = {0.68, 0.16, 0.36, 0}]; If[$CellContext`graph$$, 
+$CellContext`q4$$} = {0.68, 0.16, 0.36, 0}, $CellContext`straty$$ == 
+          14, {$CellContext`p1$$, $CellContext`p2$$, $CellContext`p3$$, \
+$CellContext`p4$$} = {0.5, 0.5, 0.5, 0.5}]; If[
+          
+          Or[$CellContext`previousParams[
+            "p1"] != $CellContext`p1$$, $CellContext`previousParams[
+            "p2"] != $CellContext`p2$$, $CellContext`previousParams[
+            "p3"] != $CellContext`p3$$, $CellContext`previousParams[
+            "p4"] != $CellContext`p4$$, $CellContext`previousParams[
+            "q1"] != $CellContext`q1$$, $CellContext`previousParams[
+            "q2"] != $CellContext`q2$$, $CellContext`previousParams[
+            "q3"] != $CellContext`q3$$, $CellContext`previousParams[
+            "q4"] != $CellContext`q4$$], $CellContext`historyx = {}; \
+$CellContext`historyy = {}; 
+          For[$CellContext`i = 
+            1, $CellContext`i <= $CellContext`iterationCount$$, 
+            Increment[$CellContext`i], AppendTo[$CellContext`historyx, 
+              If[
+              RandomReal[] < 
+               Which[$CellContext`i == 1, $CellContext`p1$$, 
+                 Last[$CellContext`historyy] == "C", 
+                 Which[
+                 Last[$CellContext`historyx] == "C", $CellContext`p1$$, 
+                  Last[$CellContext`historyx] == "D", $CellContext`p2$$], 
+                 Last[$CellContext`historyy] == "D", 
+                 Which[
+                 Last[$CellContext`historyx] == "C", $CellContext`p3$$, 
+                  Last[$CellContext`historyx] == "D", $CellContext`p4$$]], 
+               "C", "D"]]; AppendTo[$CellContext`historyy, 
+              If[
+              RandomReal[] < 
+               Which[$CellContext`i == 1, $CellContext`q1$$, 
+                 Last[$CellContext`historyx] == "C", 
+                 Which[
+                 Last[$CellContext`historyy] == "C", $CellContext`q1$$, 
+                  Last[$CellContext`historyy] == "D", $CellContext`q3$$], 
+                 Last[$CellContext`historyx] == "D", 
+                 Which[
+                 Last[$CellContext`historyy] == "C", $CellContext`q2$$, 
+                  Last[$CellContext`historyy] == "D", $CellContext`q4$$]], 
+               "C", "D"]]; Null]; $CellContext`previousParams = <|
+            "p1" -> $CellContext`p1$$, "p2" -> $CellContext`p2$$, 
+             "p3" -> $CellContext`p3$$, "p4" -> $CellContext`p4$$, 
+             "q1" -> $CellContext`q1$$, "q2" -> $CellContext`q2$$, 
+             "q3" -> $CellContext`q3$$, "q4" -> $CellContext`q4$$|>; Null]; 
+        Pause[0.1]; If[$CellContext`graph$$, 
           $CellContext`graphplot[$CellContext`transmatrix1$, \
 $CellContext`nstepDistr$], 
           Column[{
@@ -2004,7 +2361,35 @@ $CellContext`yPayoff$}]}, Alignment -> Bottom],
                   TableHeadings -> {None, {"cc", "cd", "dc", "dd"}}]], 
                 Style[
                 "stationary distribution\n", FontSize -> 13], {{
-                 Top, Center}}]}]]}, Alignment -> Center]]], "Specifications" :> {
+                 Top, Center}}]}]], 
+            Spacer[20], 
+            Row[{
+              Button[
+              "Re-run Simulation", $CellContext`historyx = {}; \
+$CellContext`historyy = {}; $CellContext`previousParams = <|
+                 "p1" -> -1, "p2" -> -1, "p3" -> -1, "p4" -> -1, "q1" -> -1, 
+                  "q2" -> -1, "q3" -> -1, "q4" -> -1|>; Null, Appearance -> 
+               "Framed", Background -> LightBlue]}], 
+            Spacer[10], 
+            Style[
+             
+             Row[{"Przyk\[LSlash]adowy wynik ", $CellContext`iterationCount$$,
+                " iteracji:"}], FontSize -> 14, Bold], 
+            Spacer[10], 
+            If[
+             And[
+             Length[$CellContext`historyx] > 0, Length[$CellContext`historyy] > 
+              0, Length[$CellContext`historyx] == 
+              Length[$CellContext`historyy], 
+              Length[$CellContext`historyx] == $CellContext`iterationCount$$], 
+             Grid[
+              Prepend[
+               Transpose[{
+                 
+                 Range[$CellContext`iterationCount$$], $CellContext`historyx, \
+$CellContext`historyy}], {"Round", "Player X", "Player Y"}], Frame -> All, 
+              Alignment -> Center, Background -> {None, {LightGray, None}}], 
+             Nothing]}]]], "Specifications" :> {
         Row[{
          "player X strategy"}], {{$CellContext`stratx$$, Null, 
           "deterministic"}, {
@@ -2013,8 +2398,8 @@ $CellContext`yPayoff$}]}, Alignment -> Bottom],
          6}, {{$CellContext`stratx$$, Null, "equalizer"}, {
          7 -> "SET-2", 8 -> "SET-2.5", 9 -> "SET-3"}, BaseStyle -> 
          6}, {{$CellContext`stratx$$, Null, "extortionate"}, {
-         10 -> "EXT-2", 11 -> "EXT-3", 12 -> "EXT-4", 13 -> "EXT-5"}, 
-         BaseStyle -> 6}, 
+         10 -> "EXT-2", 11 -> "EXT-3", 12 -> "EXT-4", 13 -> "EXT-5", 14 -> 
+          "RAND"}, BaseStyle -> 6}, 
         Row[{
           Spacer[{25, 0}], 
           Button[
@@ -2058,6 +2443,7 @@ $CellContext`p4$$}, $CellContext`eps]; $CellContext`stratx$$ = 6, ImageSize ->
           Spacer[{35, 0}], 
           Button[
            Style["random", FontSize -> 13], 
+           
            Increment[$CellContext`seed$$]; {$CellContext`q1$$, \
 $CellContext`q2$$, $CellContext`q3$$, $CellContext`q4$$} = Round[
               RandomReal[{0, 1}, 4], $CellContext`eps]; $CellContext`straty$$ = 
@@ -2084,11 +2470,17 @@ $CellContext`q4$$}, $CellContext`eps]; $CellContext`straty$$ = 6, ImageSize ->
          "Labeled", ImageSize -> 95}, 
         Delimiter, {{$CellContext`graph$$, False, "show"}, {
          False -> "transition matrix", True -> "transition graph"}, BaseStyle -> 
-         8}, {$CellContext`seed$$, 1, 100, 1, ControlType -> None}}, 
+         8}, {{$CellContext`iterationCount$$, 115, "Iteration Count"}, 1, 
+         1000, 1, Appearance -> "Labeled", ImageSize -> 95, 
+         Dynamic[$CellContext`historyx = {}; $CellContext`historyy = {}; \
+$CellContext`previousParams = <|
+            "p1" -> -1, "p2" -> -1, "p3" -> -1, "p4" -> -1, "q1" -> -1, 
+             "q2" -> -1, "q3" -> -1, "q4" -> -1|>]}, {$CellContext`seed$$, 1, 
+         100, 1, ControlType -> None}}, 
       "Options" :> {
        ControlPlacement -> Left, BaseStyle -> 13, SynchronousUpdating -> 
         True}, "DefaultOptions" :> {}],
-     ImageSizeCache->{644.9128125, {221.19062499999998`, 226.81562499999998`}},
+     ImageSizeCache->{652.79953125, {457.8394531249999, 463.4644531249999}},
      SingleEvaluation->True],
     Deinitialization:>None,
     DynamicModuleValues:>{},
@@ -2098,7 +2490,12 @@ $CellContext`q4$$}, $CellContext`eps]; $CellContext`straty$$ = 6, ImageSize ->
        0.5625, $CellContext`q30 = 0.5, $CellContext`q40 = 
        0.125, $CellContext`pc = 1, $CellContext`qc = 1, $CellContext`n = 
        20, $CellContext`sx = {3, 0, 5, 1}, $CellContext`sy = {3, 5, 0, 
-        1}, $CellContext`graphplot[
+        1}, $CellContext`previousParams = <|
+        "p1" -> -1, "p2" -> -1, "p3" -> -1, "p4" -> -1, "q1" -> -1, 
+         "q2" -> -1, "q3" -> -1, 
+         "q4" -> -1|>, $CellContext`historyx = {}, $CellContext`historyy = \
+{}, $CellContext`i = 21, $CellContext`iterationCount$$ = 
+       20, $CellContext`graphplot[
          Pattern[$CellContext`matrix, 
           Blank[]], 
          Pattern[$CellContext`distribution, 
@@ -2177,10 +2574,548 @@ $CellContext`q4$$}, $CellContext`eps]; $CellContext`straty$$ = 6, ImageSize ->
    StripOnInput->False,
    FontSize->13],
   Manipulate`InterpretManipulate[1]]], "Output",
- TaggingRules->{},
- CellChangeTimes->{{3.94074048942962*^9, 3.940740515565694*^9}},
- CellLabel->"Out[11]=",
- CellID->1765924673,ExpressionUUID->"bad125af-e467-4b3e-9598-07ddeeeea177"]
+ CellChangeTimes->{3.940841435565304*^9, 3.940841531277729*^9, 
+  3.9408415669031467`*^9, 3.940841646222994*^9, 3.940841702191855*^9, 
+  3.940841735609148*^9, 3.940841879213706*^9, 3.9408420897545424`*^9, 
+  3.94084227980895*^9},
+ CellLabel->"Out[61]=",
+ CellID->1226327685,ExpressionUUID->"d8055226-f982-4645-b3e7-a90649bd0899"]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.9408413552393503`*^9, 3.940841356058947*^9}},
+ CellID->1571006740,ExpressionUUID->"9cc8fbb5-466f-40d7-a65d-e1c205d68871"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{
+  3.940841168804389*^9, {3.940841342494936*^9, 3.94084135700972*^9}},
+ CellID->1765586758,ExpressionUUID->"b6105d90-c78d-40e7-b4fa-024782a3b9f6"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`graph$$ = 
+    False, $CellContext`iterationCount$$ = 20, $CellContext`p1$$ = 
+    0.5, $CellContext`p2$$ = 0.5, $CellContext`p3$$ = 0.5, $CellContext`p4$$ =
+     0.5, $CellContext`q1$$ = 0.875, $CellContext`q2$$ = 
+    0.4375, $CellContext`q3$$ = 0.375, $CellContext`q4$$ = 
+    0, $CellContext`seed$$ = 2, $CellContext`stratx$$ = 
+    14, $CellContext`straty$$ = 14, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[
+       Row[{"player X strategy"}]], Manipulate`Dump`ThisIsNotAControl, 
+      ControlType -> None}, {{
+       Hold[$CellContext`stratx$$], Null, "deterministic"}, {
+      1 -> "All-c", 2 -> "All-d", 3 -> "TFT", 4 -> "GTFT", 5 -> "GEN-2"}, 
+      ControlType -> SetterBar}, {{
+       Hold[$CellContext`stratx$$], Null, "equalizer"}, {
+      7 -> "SET-2", 8 -> "SET-2.5", 9 -> "SET-3"}, ControlType -> 
+      SetterBar}, {{
+       Hold[$CellContext`stratx$$], Null, "extortionate"}, {
+      10 -> "EXT-2", 11 -> "EXT-3", 12 -> "EXT-4", 13 -> "EXT-5"}, 
+      ControlType -> SetterBar}, {{
+       Hold[$CellContext`stratx$$], Null, "new ones"}, {14 -> "random"}, 
+      ControlType -> PopupMenu}, {
+      Hold[
+       Row[{
+         Spacer[{25, 0}], 
+         Button[
+          Style["random", FontSize -> 13], 
+          Increment[$CellContext`seed$$]; {$CellContext`p1$$, \
+$CellContext`p2$$, $CellContext`p3$$, $CellContext`p4$$} = Round[
+             RandomReal[{0, 1}, 4], $CellContext`eps]; $CellContext`stratx$$ = 
+           14, ImageSize -> 80], 
+         Button[
+          Style[
+          "custom", FontSize -> 
+           13], {$CellContext`p1$$, $CellContext`p2$$, $CellContext`p3$$, \
+$CellContext`p4$$} = 
+           Round[{$CellContext`p1$$, $CellContext`p2$$, $CellContext`p3$$, \
+$CellContext`p4$$}, $CellContext`eps]; $CellContext`stratx$$ = 6, ImageSize -> 
+          80]}]], Manipulate`Dump`ThisIsNotAControl, ControlType -> None}, {{
+       Hold[$CellContext`p1$$], 0.75, 
+       Subscript[
+        Style["p", Italic], $CellContext`cc]}, 0, 1, 0.01, ControlType -> 
+      Manipulator}, {{
+       Hold[$CellContext`p2$$], 0.25, 
+       Subscript[
+        Style["p", Italic], $CellContext`cd]}, 0, 1, 0.01, ControlType -> 
+      Manipulator}, {{
+       Hold[$CellContext`p3$$], 0.5, 
+       Subscript[
+        Style["p", Italic], $CellContext`dc]}, 0, 1, 0.01, ControlType -> 
+      Manipulator}, {{
+       Hold[$CellContext`p4$$], 0.25, 
+       Subscript[
+        Style["p", Italic], $CellContext`dd]}, 0, 1, 0.01, ControlType -> 
+      Manipulator}, {
+      Hold[
+       Spacer[20]], Manipulate`Dump`ThisIsNotAControl, ControlType -> None}, {
+     
+      Hold[
+       Row[{"player Y strategy"}]], Manipulate`Dump`ThisIsNotAControl, 
+      ControlType -> None}, {{
+       Hold[$CellContext`straty$$], Null, "deterministic"}, {
+      1 -> "All-c", 2 -> "All-d", 3 -> "TFT", 4 -> "GTFT", 5 -> "GEN-2"}, 
+      ControlType -> SetterBar}, {{
+       Hold[$CellContext`straty$$], Null, "equalizer"}, {
+      7 -> "SET-2", 8 -> "SET-2.5", 9 -> "SET-3"}, ControlType -> 
+      SetterBar}, {{
+       Hold[$CellContext`straty$$], Null, "extortionate"}, {
+      10 -> "EXT-2", 11 -> "EXT-3", 12 -> "EXT-4", 13 -> "EXT-5"}, 
+      ControlType -> SetterBar}, {{
+       Hold[$CellContext`straty$$], Null, "new ones"}, {14 -> "random"}, 
+      ControlType -> SetterBar}, {
+      Hold[
+       Row[{
+         Spacer[{35, 0}], 
+         Button[
+          Style["random", FontSize -> 13], 
+          Increment[$CellContext`seed$$]; {$CellContext`q1$$, \
+$CellContext`q2$$, $CellContext`q3$$, $CellContext`q4$$} = Round[
+             RandomReal[{0, 1}, 4], $CellContext`eps]; $CellContext`straty$$ = 
+           14, ImageSize -> 80], 
+         Button[
+          Style[
+          "custom", FontSize -> 
+           13], {$CellContext`q1$$, $CellContext`q2$$, $CellContext`q3$$, \
+$CellContext`q4$$} = 
+           Round[{$CellContext`q1$$, $CellContext`q2$$, $CellContext`q3$$, \
+$CellContext`q4$$}, $CellContext`eps]; $CellContext`straty$$ = 6, ImageSize -> 
+          80]}]], Manipulate`Dump`ThisIsNotAControl, ControlType -> None}, {{
+       Hold[$CellContext`q1$$], 1, 
+       Subscript[
+        Style["q", Italic], $CellContext`cc]}, 0, 1, 0.01, ControlType -> 
+      Manipulator}, {{
+       Hold[$CellContext`q2$$], 0.5625, 
+       Subscript[
+        Style["q", Italic], $CellContext`cd]}, 0, 1, 0.01, ControlType -> 
+      Manipulator}, {{
+       Hold[$CellContext`q3$$], 0.5, 
+       Subscript[
+        Style["q", Italic], $CellContext`dc]}, 0, 1, 0.01, ControlType -> 
+      Manipulator}, {{
+       Hold[$CellContext`q4$$], 0.125, 
+       Subscript[
+        Style["q", Italic], $CellContext`dd]}, 0, 1, 0.01, ControlType -> 
+      Manipulator}, {{
+       Hold[$CellContext`graph$$], False, "show"}, {
+      False -> "transition matrix", True -> "transition graph"}, ControlType -> 
+      SetterBar}, {{
+       Hold[$CellContext`iterationCount$$], 20, "Iteration Count"}, 1, 1000, 
+      1, Appearance -> "Labeled", ImageSize -> 95, 
+      Dynamic[$CellContext`historyx = {}; $CellContext`historyy = {}; \
+$CellContext`previousParams = <|
+         "p1" -> -1, "p2" -> -1, "p3" -> -1, "p4" -> -1, "q1" -> -1, 
+          "q2" -> -1, "q3" -> -1, "q4" -> -1|>], ControlType -> InputField}, {
+     
+      Hold[$CellContext`seed$$], 1, 100, 1, ControlType -> None}}, 
+    Typeset`size$$ = {385., {429.2238281249999, 434.8488281249999}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = False, 
+    Typeset`keyframeActionsQ$$ = False, Typeset`keyframeList$$ = {}}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`graph$$ = 
+        False, $CellContext`iterationCount$$ = 20, $CellContext`p1$$ = 
+        0.75, $CellContext`p2$$ = 0.25, $CellContext`p3$$ = 
+        0.5, $CellContext`p4$$ = 0.25, $CellContext`q1$$ = 
+        1, $CellContext`q2$$ = 0.5625, $CellContext`q3$$ = 
+        0.5, $CellContext`q4$$ = 0.125, $CellContext`seed$$ = 
+        1, $CellContext`stratx$$ = Null, $CellContext`straty$$ = Null}, 
+      "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$, Typeset`keyframeActionsQ$$, 
+        Typeset`keyframeList$$}, "Body" :> 
+      Module[{$CellContext`transmatrix$, $CellContext`transmatrix1$, \
+$CellContext`transmatrix2$, $CellContext`initialDistr$, \
+$CellContext`nstepDistr$, $CellContext`nstepDistr1$, $CellContext`xPayoff$, \
+$CellContext`yPayoff$}, {$CellContext`p10, $CellContext`p20, \
+$CellContext`p30, $CellContext`p40, $CellContext`q10, $CellContext`q20, \
+$CellContext`q30, $CellContext`q40} = {
+          0.75, 0.25, 0.5, 0.25, 1, 0.5625, 0.5, 
+           0.125}; $CellContext`transmatrix$ = {{$CellContext`p1$$ \
+$CellContext`q1$$, $CellContext`p1$$ (1 - $CellContext`q1$$), (
+             1 - $CellContext`p1$$) $CellContext`q1$$, (
+             1 - $CellContext`p1$$) (
+             1 - $CellContext`q1$$)}, {$CellContext`p2$$ $CellContext`q3$$, \
+$CellContext`p2$$ (1 - $CellContext`q3$$), (
+             1 - $CellContext`p2$$) $CellContext`q3$$, (
+             1 - $CellContext`p2$$) (
+             1 - $CellContext`q3$$)}, {$CellContext`p3$$ $CellContext`q2$$, \
+$CellContext`p3$$ (1 - $CellContext`q2$$), (
+             1 - $CellContext`p3$$) $CellContext`q2$$, (
+             1 - $CellContext`p3$$) (
+             1 - $CellContext`q2$$)}, {$CellContext`p4$$ $CellContext`q4$$, \
+$CellContext`p4$$ (1 - $CellContext`q4$$), (
+             1 - $CellContext`p4$$) $CellContext`q4$$, (
+             1 - $CellContext`p4$$) (
+             1 - $CellContext`q4$$)}}; $CellContext`transmatrix1$ = 
+         Map[NumberForm[
+            N[#], {5, 1}]& , $CellContext`transmatrix$, {
+           2}]; $CellContext`transmatrix2$ = Map[NumberForm[
+            N[#], {5, 2}]& , $CellContext`transmatrix$, {
+           2}]; $CellContext`initialDistr$ = {$CellContext`pc \
+$CellContext`qc, $CellContext`pc (1 - $CellContext`qc), (
+            1 - $CellContext`pc) $CellContext`qc, (1 - $CellContext`pc) (
+            1 - $CellContext`qc)}; $CellContext`nstepDistr$ = 
+         Dot[$CellContext`initialDistr$, 
+           
+           MatrixPower[$CellContext`transmatrix$, $CellContext`n]]; \
+$CellContext`nstepDistr1$ = Map[NumberForm[
+            N[#], {6, 2}]& , 
+           Dot[$CellContext`initialDistr$, 
+            MatrixPower[$CellContext`transmatrix$, $CellContext`n]], {
+           1}]; $CellContext`sx = {3, 0, 5, 1}; $CellContext`sy = {3, 5, 0, 
+          1}; $CellContext`xPayoff$ = 
+         Dot[$CellContext`nstepDistr$, $CellContext`sx]; \
+$CellContext`yPayoff$ = Dot[$CellContext`nstepDistr$, $CellContext`sy]; 
+        Which[$CellContext`stratx$$ == 
+          1, {$CellContext`p1$$, $CellContext`p2$$, $CellContext`p3$$, \
+$CellContext`p4$$} = {1, 1, 1, 1}, $CellContext`stratx$$ == 
+          2, {$CellContext`p1$$, $CellContext`p2$$, $CellContext`p3$$, \
+$CellContext`p4$$} = {0, 0, 0, 0}, $CellContext`stratx$$ == 
+          3, {$CellContext`p1$$, $CellContext`p2$$, $CellContext`p3$$, \
+$CellContext`p4$$} = {1, 0, 1, 0}, $CellContext`stratx$$ == 
+          4, {$CellContext`p1$$, $CellContext`p2$$, $CellContext`p3$$, \
+$CellContext`p4$$} = {1, 0.25, 1, 0.25}, $CellContext`stratx$$ == 
+          5, {$CellContext`p1$$, $CellContext`p2$$, $CellContext`p3$$, \
+$CellContext`p4$$} = {1, 0.5625, 0.5, 0.125}, $CellContext`stratx$$ == 
+          7, {$CellContext`p1$$, $CellContext`p2$$, $CellContext`p3$$, \
+$CellContext`p4$$} = {0.75, 0.25, 0.5, 0.25}, $CellContext`stratx$$ == 
+          8, {$CellContext`p1$$, $CellContext`p2$$, $CellContext`p3$$, \
+$CellContext`p4$$} = {0.9, 0.5, 0.5, 0.3}, $CellContext`stratx$$ == 
+          9, {$CellContext`p1$$, $CellContext`p2$$, $CellContext`p3$$, \
+$CellContext`p4$$} = {1, 0.9, 0.15, 0.1}, $CellContext`stratx$$ == 
+          10, {$CellContext`p1$$, $CellContext`p2$$, $CellContext`p3$$, \
+$CellContext`p4$$} = {0.875, 0.4375, 0.375, 0}, $CellContext`stratx$$ == 
+          11, {$CellContext`p1$$, $CellContext`p2$$, $CellContext`p3$$, \
+$CellContext`p4$$} = {0.8, 0.55, 0.3, 0}, $CellContext`stratx$$ == 
+          12, {$CellContext`p1$$, $CellContext`p2$$, $CellContext`p3$$, \
+$CellContext`p4$$} = {0.7, 0.15, 0.4, 0}, $CellContext`stratx$$ == 
+          13, {$CellContext`p1$$, $CellContext`p2$$, $CellContext`p3$$, \
+$CellContext`p4$$} = {0.68, 0.16, 0.36, 0}, $CellContext`stratx$$ == 
+          14, {$CellContext`p1$$, $CellContext`p2$$, $CellContext`p3$$, \
+$CellContext`p4$$} = {0.5, 0.5, 0.5, 0.5}]; 
+        Which[$CellContext`straty$$ == 
+          1, {$CellContext`q1$$, $CellContext`q2$$, $CellContext`q3$$, \
+$CellContext`q4$$} = {1, 1, 1, 1}, $CellContext`straty$$ == 
+          2, {$CellContext`q1$$, $CellContext`q2$$, $CellContext`q3$$, \
+$CellContext`q4$$} = {0, 0, 0, 0}, $CellContext`straty$$ == 
+          3, {$CellContext`q1$$, $CellContext`q2$$, $CellContext`q3$$, \
+$CellContext`q4$$} = {1, 0, 1, 0}, $CellContext`straty$$ == 
+          4, {$CellContext`q1$$, $CellContext`q2$$, $CellContext`q3$$, \
+$CellContext`q4$$} = {1, 0.25, 1, 0.25}, $CellContext`straty$$ == 
+          5, {$CellContext`q1$$, $CellContext`q2$$, $CellContext`q3$$, \
+$CellContext`q4$$} = {1, 0.5625, 0.5, 0.125}, $CellContext`straty$$ == 
+          7, {$CellContext`q1$$, $CellContext`q2$$, $CellContext`q3$$, \
+$CellContext`q4$$} = {0.75, 0.25, 0.5, 0.25}, $CellContext`straty$$ == 
+          8, {$CellContext`q1$$, $CellContext`q2$$, $CellContext`q3$$, \
+$CellContext`q4$$} = {0.9, 0.5, 0.5, 0.3}, $CellContext`straty$$ == 
+          9, {$CellContext`q1$$, $CellContext`q2$$, $CellContext`q3$$, \
+$CellContext`q4$$} = {1, 0.9, 0.15, 0.1}, $CellContext`straty$$ == 
+          10, {$CellContext`q1$$, $CellContext`q2$$, $CellContext`q3$$, \
+$CellContext`q4$$} = {0.875, 0.4375, 0.375, 0}, $CellContext`straty$$ == 
+          11, {$CellContext`q1$$, $CellContext`q2$$, $CellContext`q3$$, \
+$CellContext`q4$$} = {0.8, 0.55, 0.3, 0}, $CellContext`straty$$ == 
+          12, {$CellContext`q1$$, $CellContext`q2$$, $CellContext`q3$$, \
+$CellContext`q4$$} = {0.7, 0.15, 0.4, 0}, $CellContext`straty$$ == 
+          13, {$CellContext`q1$$, $CellContext`q2$$, $CellContext`q3$$, \
+$CellContext`q4$$} = {0.68, 0.16, 0.36, 0}, $CellContext`straty$$ == 
+          14, {$CellContext`p1$$, $CellContext`p2$$, $CellContext`p3$$, \
+$CellContext`p4$$} = {0.5, 0.5, 0.5, 0.5}]; If[
+          
+          Or[$CellContext`previousParams[
+            "p1"] != $CellContext`p1$$, $CellContext`previousParams[
+            "p2"] != $CellContext`p2$$, $CellContext`previousParams[
+            "p3"] != $CellContext`p3$$, $CellContext`previousParams[
+            "p4"] != $CellContext`p4$$, $CellContext`previousParams[
+            "q1"] != $CellContext`q1$$, $CellContext`previousParams[
+            "q2"] != $CellContext`q2$$, $CellContext`previousParams[
+            "q3"] != $CellContext`q3$$, $CellContext`previousParams[
+            "q4"] != $CellContext`q4$$], $CellContext`historyx = {}; \
+$CellContext`historyy = {}; 
+          For[$CellContext`i = 
+            1, $CellContext`i <= $CellContext`iterationCount$$, 
+            Increment[$CellContext`i], AppendTo[$CellContext`historyx, 
+              If[
+              RandomReal[] < 
+               Which[$CellContext`i == 1, $CellContext`p1$$, 
+                 Last[$CellContext`historyy] == "C", 
+                 Which[
+                 Last[$CellContext`historyx] == "C", $CellContext`p1$$, 
+                  Last[$CellContext`historyx] == "D", $CellContext`p2$$], 
+                 Last[$CellContext`historyy] == "D", 
+                 Which[
+                 Last[$CellContext`historyx] == "C", $CellContext`p3$$, 
+                  Last[$CellContext`historyx] == "D", $CellContext`p4$$]], 
+               "C", "D"]]; AppendTo[$CellContext`historyy, 
+              If[
+              RandomReal[] < 
+               Which[$CellContext`i == 1, $CellContext`q1$$, 
+                 Last[$CellContext`historyx] == "C", 
+                 Which[
+                 Last[$CellContext`historyy] == "C", $CellContext`q1$$, 
+                  Last[$CellContext`historyy] == "D", $CellContext`q3$$], 
+                 Last[$CellContext`historyx] == "D", 
+                 Which[
+                 Last[$CellContext`historyy] == "C", $CellContext`q2$$, 
+                  Last[$CellContext`historyy] == "D", $CellContext`q4$$]], 
+               "C", "D"]]; Null]; $CellContext`previousParams = <|
+            "p1" -> $CellContext`p1$$, "p2" -> $CellContext`p2$$, 
+             "p3" -> $CellContext`p3$$, "p4" -> $CellContext`p4$$, 
+             "q1" -> $CellContext`q1$$, "q2" -> $CellContext`q2$$, 
+             "q3" -> $CellContext`q3$$, "q4" -> $CellContext`q4$$|>; Null]; 
+        Pause[0.1]; If[$CellContext`graph$$, 
+          $CellContext`graphplot[$CellContext`transmatrix1$, \
+$CellContext`nstepDistr$], 
+          Column[{
+            Row[{
+              $CellContext`stratchart[{$CellContext`p1$$, $CellContext`p2$$, \
+$CellContext`p3$$, $CellContext`p4$$}, {$CellContext`q1$$, $CellContext`q2$$, \
+$CellContext`q3$$, $CellContext`q4$$}], 
+              Spacer[20], 
+              $CellContext`payoffchart[{$CellContext`xPayoff$, \
+$CellContext`yPayoff$}]}, Alignment -> Bottom], 
+            Text[
+             Row[{
+               Labeled[
+                
+                MatrixForm[$CellContext`transmatrix2$, 
+                 TableHeadings -> {{"cc", "cd", "dc", "dd"}, {
+                   "cc", "cd", "dc", "dd"}}], 
+                "transition matrix\n", {{Top, Center}}], 
+               Spacer[50], 
+               Labeled[
+                Style[
+                 
+                 MatrixForm[{$CellContext`nstepDistr1$}, 
+                  TableHeadings -> {None, {"cc", "cd", "dc", "dd"}}]], 
+                Style[
+                "stationary distribution\n", FontSize -> 13], {{
+                 Top, Center}}]}]], 
+            Spacer[20], 
+            Row[{
+              Button[
+              "Re-run Simulation", $CellContext`historyx = {}; \
+$CellContext`historyy = {}; $CellContext`previousParams = <|
+                 "p1" -> -1, "p2" -> -1, "p3" -> -1, "p4" -> -1, "q1" -> -1, 
+                  "q2" -> -1, "q3" -> -1, "q4" -> -1|>; Null, Appearance -> 
+               "Framed", Background -> LightBlue]}], 
+            Spacer[10], 
+            Style[
+             
+             Row[{"Przyk\[LSlash]adowy wynik ", $CellContext`iterationCount$$,
+                " iteracji:"}], FontSize -> 14, Bold], 
+            Spacer[10], 
+            If[
+             And[
+             Length[$CellContext`historyx] > 0, Length[$CellContext`historyy] > 
+              0, Length[$CellContext`historyx] == 
+              Length[$CellContext`historyy], 
+              Length[$CellContext`historyx] == $CellContext`iterationCount$$], 
+             Grid[
+              Prepend[
+               Transpose[{
+                 
+                 Range[$CellContext`iterationCount$$], $CellContext`historyx, \
+$CellContext`historyy}], {"Round", "Player X", "Player Y"}], Frame -> All, 
+              Alignment -> Center, Background -> {None, {LightGray, None}}], 
+             Nothing]}]]], "Specifications" :> {
+        Row[{
+         "player X strategy"}], {{$CellContext`stratx$$, Null, 
+          "deterministic"}, {
+         1 -> "All-c", 2 -> "All-d", 3 -> "TFT", 4 -> "GTFT", 5 -> "GEN-2"}, 
+         ControlType -> SetterBar, BaseStyle -> 
+         6}, {{$CellContext`stratx$$, Null, "equalizer"}, {
+         7 -> "SET-2", 8 -> "SET-2.5", 9 -> "SET-3"}, BaseStyle -> 
+         6}, {{$CellContext`stratx$$, Null, "extortionate"}, {
+         10 -> "EXT-2", 11 -> "EXT-3", 12 -> "EXT-4", 13 -> "EXT-5"}, 
+         BaseStyle -> 6}, {{$CellContext`stratx$$, Null, "new ones"}, {
+         14 -> "random"}, BaseStyle -> 6}, 
+        Row[{
+          Spacer[{25, 0}], 
+          Button[
+           Style["random", FontSize -> 13], 
+           Increment[$CellContext`seed$$]; {$CellContext`p1$$, \
+$CellContext`p2$$, $CellContext`p3$$, $CellContext`p4$$} = Round[
+              RandomReal[{0, 1}, 4], $CellContext`eps]; $CellContext`stratx$$ = 
+            14, ImageSize -> 80], 
+          Button[
+           Style[
+           "custom", FontSize -> 
+            
+            13], {$CellContext`p1$$, $CellContext`p2$$, $CellContext`p3$$, \
+$CellContext`p4$$} = 
+            Round[{$CellContext`p1$$, $CellContext`p2$$, $CellContext`p3$$, \
+$CellContext`p4$$}, $CellContext`eps]; $CellContext`stratx$$ = 6, ImageSize -> 
+           80]}], {{$CellContext`p1$$, 0.75, 
+          Subscript[
+           Style["p", Italic], $CellContext`cc]}, 0, 1, 0.01, Appearance -> 
+         "Labeled", ImageSize -> 95}, {{$CellContext`p2$$, 0.25, 
+          Subscript[
+           Style["p", Italic], $CellContext`cd]}, 0, 1, 0.01, Appearance -> 
+         "Labeled", ImageSize -> 95}, {{$CellContext`p3$$, 0.5, 
+          Subscript[
+           Style["p", Italic], $CellContext`dc]}, 0, 1, 0.01, Appearance -> 
+         "Labeled", ImageSize -> 95}, {{$CellContext`p4$$, 0.25, 
+          Subscript[
+           Style["p", Italic], $CellContext`dd]}, 0, 1, 0.01, Appearance -> 
+         "Labeled", ImageSize -> 95}, Delimiter, 
+        Spacer[20], 
+        Row[{
+         "player Y strategy"}], {{$CellContext`straty$$, Null, 
+          "deterministic"}, {
+         1 -> "All-c", 2 -> "All-d", 3 -> "TFT", 4 -> "GTFT", 5 -> "GEN-2"}, 
+         BaseStyle -> 6}, {{$CellContext`straty$$, Null, "equalizer"}, {
+         7 -> "SET-2", 8 -> "SET-2.5", 9 -> "SET-3"}, ControlType -> 
+         SetterBar, BaseStyle -> 
+         6}, {{$CellContext`straty$$, Null, "extortionate"}, {
+         10 -> "EXT-2", 11 -> "EXT-3", 12 -> "EXT-4", 13 -> "EXT-5"}, 
+         BaseStyle -> 6}, {{$CellContext`straty$$, Null, "new ones"}, {
+         14 -> "random"}, ControlType -> SetterBar, BaseStyle -> 6}, 
+        Row[{
+          Spacer[{35, 0}], 
+          Button[
+           Style["random", FontSize -> 13], 
+           Increment[$CellContext`seed$$]; {$CellContext`q1$$, \
+$CellContext`q2$$, $CellContext`q3$$, $CellContext`q4$$} = Round[
+              RandomReal[{0, 1}, 4], $CellContext`eps]; $CellContext`straty$$ = 
+            14, ImageSize -> 80], 
+          Button[
+           Style[
+           "custom", FontSize -> 
+            13], {$CellContext`q1$$, $CellContext`q2$$, $CellContext`q3$$, \
+$CellContext`q4$$} = 
+            Round[{$CellContext`q1$$, $CellContext`q2$$, $CellContext`q3$$, \
+$CellContext`q4$$}, $CellContext`eps]; $CellContext`straty$$ = 6, ImageSize -> 
+           80]}], {{$CellContext`q1$$, 1, 
+          Subscript[
+           Style["q", Italic], $CellContext`cc]}, 0, 1, 0.01, Appearance -> 
+         "Labeled", ImageSize -> 95}, {{$CellContext`q2$$, 0.5625, 
+          Subscript[
+           Style["q", Italic], $CellContext`cd]}, 0, 1, 0.01, Appearance -> 
+         "Labeled", ImageSize -> 95}, {{$CellContext`q3$$, 0.5, 
+          Subscript[
+           Style["q", Italic], $CellContext`dc]}, 0, 1, 0.01, Appearance -> 
+         "Labeled", ImageSize -> 95}, {{$CellContext`q4$$, 0.125, 
+          Subscript[
+           Style["q", Italic], $CellContext`dd]}, 0, 1, 0.01, Appearance -> 
+         "Labeled", ImageSize -> 95}, 
+        Delimiter, {{$CellContext`graph$$, False, "show"}, {
+         False -> "transition matrix", True -> "transition graph"}, BaseStyle -> 
+         8}, {{$CellContext`iterationCount$$, 20, "Iteration Count"}, 1, 1000,
+          1, Appearance -> "Labeled", ImageSize -> 95, 
+         Dynamic[$CellContext`historyx = {}; $CellContext`historyy = {}; \
+$CellContext`previousParams = <|
+            "p1" -> -1, "p2" -> -1, "p3" -> -1, "p4" -> -1, "q1" -> -1, 
+             "q2" -> -1, "q3" -> -1, "q4" -> -1|>]}, {$CellContext`seed$$, 1, 
+         100, 1, ControlType -> None}}, 
+      "Options" :> {
+       ControlPlacement -> Left, BaseStyle -> 13, SynchronousUpdating -> 
+        True}, "DefaultOptions" :> {}],
+     ImageSizeCache->{652.79953125, {457.8394531249999, 463.4644531249999}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    Initialization:>({$CellContext`p10 = 0.75, $CellContext`p20 = 
+       0.25, $CellContext`p30 = 0.5, $CellContext`p40 = 
+       0.25, $CellContext`q10 = 1, $CellContext`q20 = 
+       0.5625, $CellContext`q30 = 0.5, $CellContext`q40 = 
+       0.125, $CellContext`pc = 1, $CellContext`qc = 1, $CellContext`n = 
+       20, $CellContext`sx = {3, 0, 5, 1}, $CellContext`sy = {3, 5, 0, 
+        1}, $CellContext`previousParams = <|
+        "p1" -> -1, "p2" -> -1, "p3" -> -1, "p4" -> -1, "q1" -> -1, 
+         "q2" -> -1, "q3" -> -1, 
+         "q4" -> -1|>, $CellContext`historyx = {}, $CellContext`historyy = \
+{}, $CellContext`i = 21, $CellContext`iterationCount$$ = 
+       20, $CellContext`graphplot[
+         Pattern[$CellContext`matrix, 
+          Blank[]], 
+         Pattern[$CellContext`distribution, 
+          Blank[]]] := GraphPlot[{{1 -> 1, 
+           Placed[
+            Part[$CellContext`matrix, 3, 3], 0.576]}, {1 -> 2, 
+           Part[$CellContext`matrix, 3, 4]}, {1 -> 3, 
+           Part[$CellContext`matrix, 3, 2]}, {1 -> 4, 
+           Part[$CellContext`matrix, 3, 1]}, {2 -> 1, 
+           Part[$CellContext`matrix, 4, 3]}, {2 -> 2, 
+           Placed[
+            Part[$CellContext`matrix, 4, 4], 0.414]}, {2 -> 3, 
+           Part[$CellContext`matrix, 4, 2]}, {2 -> 4, 
+           Part[$CellContext`matrix, 4, 1]}, {3 -> 1, 
+           Part[$CellContext`matrix, 2, 3]}, {3 -> 2, 
+           Part[$CellContext`matrix, 2, 4]}, {3 -> 3, 
+           Placed[
+            Part[$CellContext`matrix, 2, 2], 0.648]}, {3 -> 4, 
+           Part[$CellContext`matrix, 2, 1]}, {4 -> 1, 
+           Part[$CellContext`matrix, 1, 3]}, {4 -> 2, 
+           Part[$CellContext`matrix, 1, 4]}, {4 -> 3, 
+           Part[$CellContext`matrix, 1, 2]}, {4 -> 4, 
+           Placed[
+            Part[$CellContext`matrix, 1, 1], 0.346]}}, EdgeLabelStyle -> 
+         Directive[13, Blue, Background -> White], 
+         VertexLabels -> {1 -> Placed[
+             Text[
+              Style["dc", 25]], Center], 2 -> Placed[
+             Text[
+              Style["dd", 25]], Center], 3 -> Placed[
+             Text[
+              Style["cd", 25]], Center], 4 -> Placed[
+             Text[
+              Style["cc", 25]], Center]}, DirectedEdges -> True, 
+         VertexShapeFunction -> "Circle", VertexSize -> 0.51, 
+         EdgeStyle -> {Thick, Black}, GraphLayout -> 
+         "DiscreteSpiralEmbedding", 
+         VertexStyle -> {1 -> Blend[{White, Yellow}, 
+             Part[$CellContext`distribution, 3]], 2 -> Blend[{White, Blue}, 
+             Part[$CellContext`distribution, 4]], 3 -> 
+           Blend[{White, Orange}, 
+             Part[$CellContext`distribution, 2]], 4 -> 
+           Blend[{White, Purple}, 
+             Part[$CellContext`distribution, 1]]}, ImageSize -> 
+         396], $CellContext`stratchart[
+         Pattern[$CellContext`p, 
+          Blank[]], 
+         Pattern[$CellContext`q, 
+          Blank[]]] := BarChart[
+         Transpose[{$CellContext`p, $CellContext`q}], ChartStyle -> 
+         "DarkRainbow", PlotRange -> {0, 1.5}, 
+         ChartLabels -> {{"cc", "cd", "dc", "dd"}, None}, ChartLegends -> 
+         Placed[{"player X", "player Y"}, {0.45, 0.8}], 
+         FrameLabel -> {{"probability of c", None}, {
+           "actions by X and Y in last round", 
+            "player strategies\n (c=cooperate, d=defect)"}}, 
+         LabelStyle -> {13, Black}, PlotTheme -> "Detailed", ImageSize -> 230,
+          FrameTicks -> {{{0., 0.2, 0.4, 0.6, 0.8, 1.}, None}, {
+           Automatic, None}}, Frame -> True, 
+         ImagePadding -> {{40, 20}, {60, 60}}, AspectRatio -> 0.75, 
+         ChartElementFunction -> "GlassRectangle"], $CellContext`payoffchart[
+         Pattern[$CellContext`pff, 
+          Blank[]]] := 
+       BarChart[{$CellContext`pff}, ImageSize -> 135, BarSpacing -> 0.25, 
+         LabelStyle -> {13, Black}, ChartElementFunction -> "GlassRectangle", 
+         ChartStyle -> "DarkRainbow", ChartLabels -> {"X", "Y"}, PlotTheme -> 
+         "Detailed", PlotRange -> {{0.2, 3.}, {0, 4.9}}, AspectRatio -> 1.25, 
+         FrameLabel -> {{"score", None}, {
+           "player", "average payoffs"}}], $CellContext`eps = 0.01}; 
+     Typeset`initDone$$ = True),
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False,
+   FontSize->13],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.940841168899681*^9},
+ CellID->1811510794,ExpressionUUID->"f1105118-ea53-4ce7-bd13-a13bab8632c9"]
 }, Open  ]]
 }, Open  ]],
 
@@ -12253,8 +13188,7 @@ Cell[BoxData[
                     TagBox[
                     GridBox[{{
                     TemplateBox[{
-                    CheckboxBox[
-                    False, {False, 
+                    CheckboxBox[False, {False, 
                     "High School Calculus and Analytic Geometry"}], "\" \"", 
                     StyleBox[
                     "\"High School Calculus and Analytic Geometry\"", 
@@ -15640,7 +16574,7 @@ MI45NKVClhYh7YPLG9D7g4WhYurkkxc5Wg5296H3Jx0ez9gsZISbDd2LBpHGn7NabnRBGTdLA25GMt\
  CellID->904163252,ExpressionUUID->"aa2929e6-c544-432a-943f-8741438677ce"]
 }, Closed]]
 }, Open  ]]
-}, Closed]]
+}, Open  ]]
 }, Open  ]]
 },
 WindowSize->{1440, 758.25},
@@ -18301,3 +19235,4 @@ later."]]]]],
   "PrivateStylesheetFormatting.nb"],
 ExpressionUUID->"78c25faf-c87e-47ab-80e2-0c8787a20ffe"
 ]
+
