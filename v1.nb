@@ -787,8 +787,16 @@ Cell[BoxData[{
  RowBox[{
   RowBox[{"playerXpoints", " ", "=", " ", "0"}], ";"}], "\[IndentingNewLine]", 
  RowBox[{
+  RowBox[{"playerYpoints", " ", "=", " ", "0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"R", " ", "=", " ", "3"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"S", " ", "=", " ", "0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"T", " ", "=", " ", "5"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
   RowBox[{
-   RowBox[{"playerYpoints", " ", "=", " ", "0"}], ";"}], 
+   RowBox[{"P", " ", "=", " ", "1"}], ";"}], 
   "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
   RowBox[{
@@ -982,12 +990,10 @@ Cell[BoxData[{
        RowBox[{
        "2", " ", "digit", " ", "accuracy", " ", "for", " ", "Distribution", 
         " ", "after", " ", "nth", " ", "step"}], "*)"}], 
-      "\[IndentingNewLine]", 
-      StyleBox["\[IndentingNewLine]",
-       Background->RGBColor[1, 1, 0]], 
+      "\[IndentingNewLine]", "\[IndentingNewLine]", 
       RowBox[{"sx", "=", 
        RowBox[{"{", 
-        RowBox[{"3", ",", "0", ",", "5", ",", "1"}], "}"}]}], ";", 
+        RowBox[{"R", ",", "S", ",", "T", ",", "P"}], "}"}]}], ";", 
       "                              ", 
       RowBox[{"(*", " ", 
        RowBox[{
@@ -997,8 +1003,8 @@ Cell[BoxData[{
          " ", "Game"}]}], " ", "*)"}], "\[IndentingNewLine]", 
       RowBox[{"sy", "=", 
        RowBox[{"{", 
-        RowBox[{"3", ",", "5", ",", "0", ",", "1"}], "}"}]}], ";", 
-      "                    ", "\[IndentingNewLine]", 
+        RowBox[{"R", ",", "T", ",", "S", ",", "P"}], "}"}]}], ";", 
+      "\[IndentingNewLine]", "    ", "\[IndentingNewLine]", 
       RowBox[{"xPayoff", "=", 
        RowBox[{"nstepDistr", ".", "sx"}]}], ";", "             ", 
       RowBox[{"(*", 
@@ -1311,10 +1317,6 @@ Cell[BoxData[{
            RowBox[{"i", "=", "1"}], ",", 
            RowBox[{"i", "<=", "iterationCount"}], ",", 
            RowBox[{"i", "++"}], ",", 
-           RowBox[{"(*", 
-            RowBox[{"Evaluate", " ", 
-             RowBox[{"X", "'"}], "s", " ", "move", " ", "based", " ", "on", 
-             " ", "probabilities"}], "*)"}], 
            RowBox[{
             RowBox[{"AppendTo", "[", 
              RowBox[{"historyx", ",", 
@@ -1356,11 +1358,7 @@ Cell[BoxData[{
                     "\"\<D\>\""}], ",", "p4"}], " ", 
                     RowBox[{"(*", "dd", "*)"}], "]"}]}], "]"}]}], ",", 
                 "\"\<C\>\"", ",", "\"\<D\>\""}], "]"}]}], "]"}], ";", 
-            "\[IndentingNewLine]", 
-            RowBox[{"(*", 
-             RowBox[{"Evaluate", " ", 
-              RowBox[{"Y", "'"}], "s", " ", "move", " ", "based", " ", "on", 
-              " ", "probabilities"}], "*)"}], 
+            "\[IndentingNewLine]", "\[IndentingNewLine]", 
             RowBox[{"AppendTo", "[", 
              RowBox[{"historyy", ",", 
               RowBox[{"If", "[", 
@@ -1402,10 +1400,6 @@ Cell[BoxData[{
                     RowBox[{"(*", "dd", "*)"}], "]"}]}], "]"}]}], ",", 
                 "\"\<C\>\"", ",", "\"\<D\>\""}], "]"}]}], "]"}], ";", 
             "\[IndentingNewLine]", 
-            RowBox[{"(*", 
-             RowBox[{
-             "Calculate", " ", "the", " ", "payoffs", " ", "for", " ", "this",
-               " ", "round"}], "*)"}], 
             RowBox[{"playerXpoints", "+=", 
              RowBox[{"Which", "[", 
               RowBox[{
@@ -1868,7 +1862,7 @@ Cell[BoxData[{
        RowBox[{"12", "\[Rule]", "\"\<EXT-4\>\""}], ",", 
        RowBox[{"13", "\[Rule]", "\"\<EXT-5\>\""}]}], "}"}], ",", 
      RowBox[{"BaseStyle", "\[Rule]", "6"}]}], "}"}], ",", 
-   "\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
    RowBox[{"Row", "[", 
     RowBox[{"{", "\[IndentingNewLine]", 
      RowBox[{
@@ -2002,10 +1996,40 @@ Cell[BoxData[{
            RowBox[{"-", "1"}]}], ",", 
           RowBox[{"\"\<q4\>\"", "->", 
            RowBox[{"-", "1"}]}]}], "|>"}]}]}], "]"}]}], "}"}], ",", "\n", 
-   "\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "R", ",", "3", ",", "\"\<Nagroda jak obaj wspolpracuj\:0105 \>\""}], 
+      "}"}], ",", "0", ",", "10", ",", "0.1", ",", 
+     RowBox[{"Appearance", "->", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"S", ",", "0", ",", "\"\<Nagroda dla oszukanego\>\""}], "}"}], 
+     ",", "0", ",", "10", ",", "0.1", ",", 
+     RowBox[{"Appearance", "->", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"T", ",", "5", ",", "\"\<Nagroda dla oszukuj\:0105cego\>\""}], 
+      "}"}], ",", "0", ",", "10", ",", "0.1", ",", 
+     RowBox[{"Appearance", "->", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"P", ",", "1", ",", "\"\<Nagroda jak obaj oszukuj\:0105\>\""}], 
+      "}"}], ",", "0", ",", "10", ",", "0.1", ",", 
+     RowBox[{"Appearance", "->", "\"\<Labeled\>\""}]}], "}"}], ",", 
+   "\[IndentingNewLine]", "\n", "\[IndentingNewLine]", 
    RowBox[{"(*", 
     RowBox[{"Not", " ", "shown", " ", "in", " ", "controls"}], "*)"}], 
-   "                                                          ", "\n", 
+   "                                                          ", 
+   "\[IndentingNewLine]", 
    RowBox[{"{", 
     RowBox[{"seed", ",", "1", ",", "100", ",", "1", ",", 
      RowBox[{"ControlType", "\[Rule]", " ", "None"}]}], "}"}], ",", 
@@ -2178,19 +2202,35 @@ Cell[BoxData[{
    3.94084579802768*^9}, 3.9408463712430553`*^9, {3.940846451019217*^9, 
    3.940846498291885*^9}, 3.940846563182106*^9, {3.940846641785034*^9, 
    3.9408466426393147`*^9}, 3.940846674896921*^9, {3.94084681765359*^9, 
-   3.940846823495429*^9}, 3.940846866999515*^9},
- CellLabel->"In[35]:=",
+   3.940846823495429*^9}, 3.940846866999515*^9, {3.9410164049032717`*^9, 
+   3.941016411086438*^9}, 3.941016495393786*^9, 3.941016911893064*^9, {
+   3.9410169848654118`*^9, 3.9410170518272667`*^9}, {3.941017372311226*^9, 
+   3.9410173818995113`*^9}, {3.941030478429976*^9, 3.941030492347384*^9}, {
+   3.941030544251683*^9, 3.941030555724206*^9}, {3.94103061992671*^9, 
+   3.941030627245695*^9}, {3.941030670863365*^9, 3.941030674994555*^9}, {
+   3.9410309135454807`*^9, 3.9410309513886766`*^9}, {3.9410310138622303`*^9, 
+   3.9410311496326103`*^9}, 3.94103130274291*^9, {3.941031344373589*^9, 
+   3.9410313642455473`*^9}, 3.941031418031199*^9, {3.9410315212827873`*^9, 
+   3.941031543281938*^9}, {3.941031591756229*^9, 3.941031599210988*^9}, {
+   3.941031652880681*^9, 3.941031660596628*^9}, {3.941031734391457*^9, 
+   3.941031734597966*^9}, {3.941031814941455*^9, 3.9410318325625057`*^9}, {
+   3.941031994612843*^9, 3.941032014312374*^9}, {3.941032052125868*^9, 
+   3.941032064338477*^9}, {3.9410321057054234`*^9, 3.941032147288876*^9}},
+ CellLabel->"In[154]:=",
  CellID->210222468,ExpressionUUID->"93811599-98a6-4f5c-8018-fd781a194dd0"],
 
 Cell[BoxData[
  TagBox[
   StyleBox[
    DynamicModuleBox[{$CellContext`graph$$ = 
-    False, $CellContext`iterationCount$$ = 20, $CellContext`p1$$ = 
-    1, $CellContext`p2$$ = 1, $CellContext`p3$$ = 1, $CellContext`p4$$ = 
-    1, $CellContext`q1$$ = 0.75, $CellContext`q2$$ = 0.25, $CellContext`q3$$ =
-     0.5, $CellContext`q4$$ = 0.25, $CellContext`seed$$ = 
-    2, $CellContext`stratx$$ = 1, $CellContext`straty$$ = 7, Typeset`show$$ = 
+    False, $CellContext`iterationCount$$ = 200, $CellContext`P$$ = 
+    1.9000000000000001`, $CellContext`p1$$ = 1, $CellContext`p2$$ = 
+    0.25, $CellContext`p3$$ = 1, $CellContext`p4$$ = 0.25, $CellContext`q1$$ =
+     0.68, $CellContext`q2$$ = 0.16, $CellContext`q3$$ = 
+    0.36, $CellContext`q4$$ = 0, $CellContext`R$$ = 
+    4.1000000000000005`, $CellContext`S$$ = 
+    0.30000000000000004`, $CellContext`seed$$ = 1, $CellContext`stratx$$ = 
+    4, $CellContext`straty$$ = 13, $CellContext`T$$ = 3.5, Typeset`show$$ = 
     True, Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
     Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
     "\"untitled\"", Typeset`specs$$ = {{
@@ -2295,21 +2335,30 @@ $CellContext`q4$$}, $CellContext`eps]; $CellContext`straty$$ = 6, ImageSize ->
       Dynamic[$CellContext`historyx = {}; $CellContext`historyy = {}; \
 $CellContext`previousParams = <|
          "p1" -> -1, "p2" -> -1, "p3" -> -1, "p4" -> -1, "q1" -> -1, 
-          "q2" -> -1, "q3" -> -1, "q4" -> -1|>], ControlType -> InputField}, {
-     
+          "q2" -> -1, "q3" -> -1, "q4" -> -1|>], ControlType -> InputField}, {{
+       Hold[$CellContext`R$$], 3, "Nagroda jak obaj wspolpracuj\:0105 "}, 0, 
+      10, 0.1, ControlType -> Manipulator}, {{
+       Hold[$CellContext`S$$], 0, "Nagroda dla oszukanego"}, 0, 10, 0.1, 
+      ControlType -> Manipulator}, {{
+       Hold[$CellContext`T$$], 5, "Nagroda dla oszukuj\:0105cego"}, 0, 10, 
+      0.1, ControlType -> Manipulator}, {{
+       Hold[$CellContext`P$$], 1, "Nagroda jak obaj oszukuj\:0105"}, 0, 10, 
+      0.1, ControlType -> Manipulator}, {
       Hold[$CellContext`seed$$], 1, 100, 1, ControlType -> None}}, 
-    Typeset`size$$ = {385., {447.84179687499994`, 453.46679687499994`}}, 
+    Typeset`size$$ = {385., {2062.6386718749936`, 2068.2636718749936`}}, 
     Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = False, 
     Typeset`keyframeActionsQ$$ = False, Typeset`keyframeList$$ = {}}, 
     DynamicBox[Manipulate`ManipulateBoxes[
      1, StandardForm, 
       "Variables" :> {$CellContext`graph$$ = 
-        False, $CellContext`iterationCount$$ = 115, $CellContext`p1$$ = 
-        0.75, $CellContext`p2$$ = 0.25, $CellContext`p3$$ = 
-        0.5, $CellContext`p4$$ = 0.25, $CellContext`q1$$ = 
-        1, $CellContext`q2$$ = 0.5625, $CellContext`q3$$ = 
-        0.5, $CellContext`q4$$ = 0.125, $CellContext`seed$$ = 
-        1, $CellContext`stratx$$ = Null, $CellContext`straty$$ = Null}, 
+        False, $CellContext`iterationCount$$ = 115, $CellContext`P$$ = 
+        1, $CellContext`p1$$ = 0.75, $CellContext`p2$$ = 
+        0.25, $CellContext`p3$$ = 0.5, $CellContext`p4$$ = 
+        0.25, $CellContext`q1$$ = 1, $CellContext`q2$$ = 
+        0.5625, $CellContext`q3$$ = 0.5, $CellContext`q4$$ = 
+        0.125, $CellContext`R$$ = 3, $CellContext`S$$ = 
+        0, $CellContext`seed$$ = 1, $CellContext`stratx$$ = 
+        Null, $CellContext`straty$$ = Null, $CellContext`T$$ = 5}, 
       "ControllerVariables" :> {}, 
       "OtherVariables" :> {
        Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
@@ -2356,8 +2405,9 @@ $CellContext`nstepDistr1$ = Map[NumberForm[
             N[#], {6, 2}]& , 
            Dot[$CellContext`initialDistr$, 
             MatrixPower[$CellContext`transmatrix$, $CellContext`n]], {
-           1}]; $CellContext`sx = {3, 0, 5, 1}; $CellContext`sy = {3, 5, 0, 
-          1}; $CellContext`xPayoff$ = 
+           1}]; $CellContext`sx = {$CellContext`R$$, $CellContext`S$$, \
+$CellContext`T$$, $CellContext`P$$}; $CellContext`sy = {$CellContext`R$$, \
+$CellContext`T$$, $CellContext`S$$, $CellContext`P$$}; $CellContext`xPayoff$ = 
          Dot[$CellContext`nstepDistr$, $CellContext`sx]; \
 $CellContext`yPayoff$ = Dot[$CellContext`nstepDistr$, $CellContext`sy]; 
         Which[$CellContext`stratx$$ == 
@@ -2640,13 +2690,19 @@ $CellContext`q4$$}, $CellContext`eps]; $CellContext`straty$$ = 6, ImageSize ->
          Dynamic[$CellContext`historyx = {}; $CellContext`historyy = {}; \
 $CellContext`previousParams = <|
             "p1" -> -1, "p2" -> -1, "p3" -> -1, "p4" -> -1, "q1" -> -1, 
-             "q2" -> -1, "q3" -> -1, "q4" -> -1|>]}, {$CellContext`seed$$, 1, 
-         100, 1, ControlType -> None}}, 
+             "q2" -> -1, "q3" -> -1, "q4" -> -1|>]}, {{$CellContext`R$$, 3, 
+          "Nagroda jak obaj wspolpracuj\:0105 "}, 0, 10, 0.1, Appearance -> 
+         "Labeled"}, {{$CellContext`S$$, 0, "Nagroda dla oszukanego"}, 0, 10, 
+         0.1, Appearance -> 
+         "Labeled"}, {{$CellContext`T$$, 5, "Nagroda dla oszukuj\:0105cego"}, 
+         0, 10, 0.1, Appearance -> 
+         "Labeled"}, {{$CellContext`P$$, 1, "Nagroda jak obaj oszukuj\:0105"},
+          0, 10, 0.1, Appearance -> "Labeled"}, {$CellContext`seed$$, 1, 100, 
+         1, ControlType -> None}}, 
       "Options" :> {
        ControlPlacement -> Left, BaseStyle -> 13, SynchronousUpdating -> 
         True}, "DefaultOptions" :> {}],
-     ImageSizeCache->{
-      652.79953125, {476.45742187499997`, 482.08242187499997`}},
+     ImageSizeCache->{810., {2091.254296874994, 2096.879296874994}},
      SingleEvaluation->True],
     Deinitialization:>None,
     DynamicModuleValues:>{},
@@ -2655,8 +2711,9 @@ $CellContext`previousParams = <|
        0.25, $CellContext`q10 = 1, $CellContext`q20 = 
        0.5625, $CellContext`q30 = 0.5, $CellContext`q40 = 
        0.125, $CellContext`pc = 1, $CellContext`qc = 1, $CellContext`n = 
-       20, $CellContext`sx = {3, 0, 5, 1}, $CellContext`sy = {3, 5, 0, 
-        1}, $CellContext`previousParams = <|
+       20, $CellContext`sx = {3, 0, 5, 1}, $CellContext`R$$ = 
+       3, $CellContext`S$$ = 0, $CellContext`T$$ = 5, $CellContext`P$$ = 
+       1, $CellContext`sy = {3, 5, 0, 1}, $CellContext`previousParams = <|
         "p1" -> -1, "p2" -> -1, "p3" -> -1, "p4" -> -1, "q1" -> -1, 
          "q2" -> -1, "q3" -> -1, "q4" -> -1|>, $CellContext`playerXpoints = 
        0, $CellContext`playerYpoints = 
@@ -2741,15 +2798,28 @@ $CellContext`i = 21, $CellContext`iterationCount$$ =
    StripOnInput->False,
    FontSize->13],
   Manipulate`InterpretManipulate[1]]], "Output",
- CellChangeTimes->{3.940841435565304*^9, 3.940841531277729*^9, 
-  3.9408415669031467`*^9, 3.940841646222994*^9, 3.940841702191855*^9, 
-  3.940841735609148*^9, 3.940841879213706*^9, 3.9408420897545424`*^9, 
-  3.94084227980895*^9, 3.9408426112785463`*^9, 3.940844649435574*^9, 
-  3.940846578579866*^9, 3.9408466794276323`*^9, 3.940846827825602*^9, 
-  3.940846869950013*^9},
- CellLabel->"Out[41]=",
- CellID->594043792,ExpressionUUID->"b49f079b-e960-4c65-a6c5-7c5b5085e996"]
+ CellChangeTimes->{
+  3.940841435565304*^9, 3.940841531277729*^9, 3.9408415669031467`*^9, 
+   3.940841646222994*^9, 3.940841702191855*^9, 3.940841735609148*^9, 
+   3.940841879213706*^9, 3.9408420897545424`*^9, 3.94084227980895*^9, 
+   3.9408426112785463`*^9, 3.940844649435574*^9, 3.940846578579866*^9, 
+   3.9408466794276323`*^9, 3.940846827825602*^9, 3.940846869950013*^9, 
+   3.9410163704413977`*^9, 3.941016518964275*^9, 3.941016916006302*^9, {
+   3.941017055379065*^9, 3.9410170621148987`*^9}, 3.941017384707271*^9, 
+   3.941017458967177*^9, 3.941030408786314*^9, 3.9410304820360117`*^9, 
+   3.941030634283643*^9, 3.941031050091154*^9, 3.941031241208765*^9, 
+   3.94103130555674*^9, 3.941031367186166*^9, {3.94103151031695*^9, 
+   3.9410315278242188`*^9}, 3.941031566854341*^9, 3.941031602416398*^9, {
+   3.9410317154195423`*^9, 3.9410317385719433`*^9}, {3.94103182049378*^9, 
+   3.941031834997319*^9}, 3.9410320669953823`*^9, 3.941032109639803*^9, 
+   3.9410321850718946`*^9},
+ CellLabel->"Out[164]=",
+ CellID->1502829462,ExpressionUUID->"61023f41-fa5c-4fb1-ac05-eb9134794f24"]
 }, Open  ]],
+
+Cell[BoxData["P"], "Input",
+ CellChangeTimes->{3.941016518344339*^9},
+ CellID->1379026955,ExpressionUUID->"654feef1-d1fc-4026-af42-adccdc6afe37"],
 
 Cell[BoxData[""], "Input",
  CellChangeTimes->{{3.9408413552393503`*^9, 3.940841356058947*^9}},
@@ -13116,8 +13186,9 @@ Cell[BoxData[
                     StripOnInput -> False]}, "RowDefault"]}, {
                     TemplateBox[{
                     CheckboxBox[False, {False, "Prime Numbers"}], "\" \"", 
-                    StyleBox["\"Prime Numbers\"", FontSize -> 12, Editable -> 
-                    False, StripOnInput -> False]}, "RowDefault"]}, {
+                    StyleBox[
+                    "\"Prime Numbers\"", FontSize -> 12, Editable -> False, 
+                    StripOnInput -> False]}, "RowDefault"]}, {
                     TemplateBox[{
                     CheckboxBox[False, {False, "Rational Numbers"}], "\" \"", 
                     
@@ -13203,9 +13274,8 @@ Cell[BoxData[
                     False, StripOnInput -> False]}, "RowDefault"]}, {
                     TemplateBox[{
                     CheckboxBox[False, {False, "Complex Numbers"}], "\" \"", 
-                    StyleBox[
-                    "\"Complex Numbers\"", FontSize -> 12, Editable -> False, 
-                    StripOnInput -> False]}, "RowDefault"]}, {
+                    StyleBox["\"Complex Numbers\"", FontSize -> 12, Editable -> 
+                    False, StripOnInput -> False]}, "RowDefault"]}, {
                     TemplateBox[{
                     CheckboxBox[False, {False, "Linear Algebra"}], "\" \"", 
                     StyleBox[
@@ -13384,9 +13454,8 @@ Cell[BoxData[
                      StripOnInput -> False]}, "RowDefault"]}, {
                     TemplateBox[{
                     CheckboxBox[False, {False, "Derivatives"}], "\" \"", 
-                    StyleBox[
-                    "\"Derivatives\"", FontSize -> 12, Editable -> False, 
-                    StripOnInput -> False]}, "RowDefault"]}, {
+                    StyleBox["\"Derivatives\"", FontSize -> 12, Editable -> 
+                    False, StripOnInput -> False]}, "RowDefault"]}, {
                     TemplateBox[{
                     CheckboxBox[False, {False, "Differential Equations"}], 
                     "\" \"", 
