@@ -206,13 +206,13 @@ Cell[BoxData[
    RowBox[{"rounding", " ", "precision"}], " ", "*)"}], "\[IndentingNewLine]", 
   RowBox[{
    RowBox[{
-    RowBox[{"eps", "=", "0.01"}], ";"}], "\[IndentingNewLine]", 
+    RowBox[{"eps", "=", "0.01"}], ";"}], 
+   StyleBox["\[IndentingNewLine]",
+    Background->RGBColor[1, 1, 0]], 
    RowBox[{"(*", " ", 
     RowBox[{
     "probabilities", " ", "of", " ", "cooperation", " ", "in", " ", "first", 
-     " ", "step"}], " ", "*)"}], 
-   StyleBox["\[IndentingNewLine]",
-    Background->RGBColor[1, 1, 0]], 
+     " ", "step"}], " ", "*)"}], "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"pc", "=", "1"}], ";", 
     RowBox[{"qc", "=", "1"}], ";"}], "\[IndentingNewLine]", 
@@ -792,7 +792,12 @@ Cell[BoxData[{
  RowBox[{
   RowBox[{"playerXpoints", " ", "=", " ", "0"}], ";"}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{"playerYpoints", " ", "=", " ", "0"}], ";"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"playerYpoints", " ", "=", " ", "0"}], ";"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"domyslne", " ", "wartosci", " ", "nagrod"}], " ", 
+   "*)"}]}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"R", " ", "=", " ", "3"}], ";"}], "\[IndentingNewLine]", 
  RowBox[{
@@ -2214,9 +2219,9 @@ Cell[BoxData[{
    3.9410360200227537`*^9, 3.941036033540992*^9}, {3.941036149808613*^9, 
    3.941036168967842*^9}, {3.941036281659346*^9, 3.941036296709947*^9}, {
    3.941036336599008*^9, 3.9410363579973087`*^9}, {3.9410363925988083`*^9, 
-   3.9410365022518377`*^9}, {3.9410365892357273`*^9, 3.9410366059715157`*^9}},
- 
- CellLabel->"In[7]:=",
+   3.9410365022518377`*^9}, {3.9410365892357273`*^9, 
+   3.9410366059715157`*^9}, {3.941121550429193*^9, 3.941121558390532*^9}},
+ CellLabel->"In[18]:=",
  CellID->210222468,ExpressionUUID->"93811599-98a6-4f5c-8018-fd781a194dd0"],
 
 Cell[BoxData[
@@ -2433,6 +2438,7 @@ $CellContext`p4$$} = {0.875, 0.4375, 0.375, 0}, $CellContext`stratx$$ ==
 $CellContext`p4$$} = {0.8, 0.55, 0.3, 0}, $CellContext`stratx$$ == 
           12, {$CellContext`p1$$, $CellContext`p2$$, $CellContext`p3$$, \
 $CellContext`p4$$} = {0.7, 0.15, 0.4, 0}, $CellContext`stratx$$ == 
+          
           13, {$CellContext`p1$$, $CellContext`p2$$, $CellContext`p3$$, \
 $CellContext`p4$$} = {0.68, 0.16, 0.36, 0}, $CellContext`stratx$$ == 
           14, {$CellContext`p1$$, $CellContext`p2$$, $CellContext`p3$$, \
@@ -2716,15 +2722,45 @@ $CellContext`previousParams = <|
        0.25, $CellContext`q10 = 1, $CellContext`q20 = 
        0.5625, $CellContext`q30 = 0.5, $CellContext`q40 = 
        0.125, $CellContext`pc = 1, $CellContext`qc = 1, $CellContext`n = 
-       20, $CellContext`sx = {3, 0, 5, 1}, $CellContext`R$$ = 
+       20, $CellContext`sx = {3, 0.5, 5, 1}, $CellContext`R$$ = 
        3, $CellContext`S$$ = 0, $CellContext`T$$ = 5, $CellContext`P$$ = 
-       1, $CellContext`sy = {3, 5, 0, 1}, $CellContext`previousParams = <|
-        "p1" -> -1, "p2" -> -1, "p3" -> -1, "p4" -> -1, "q1" -> -1, 
-         "q2" -> -1, "q3" -> -1, "q4" -> -1|>, $CellContext`playerXpoints = 
-       0, $CellContext`playerYpoints = 
-       0, $CellContext`historyx = {}, $CellContext`historyy = {}, \
-$CellContext`i = 21, $CellContext`iterationCount$$ = 
-       20, $CellContext`graphplot[
+       1, $CellContext`sy = {3, 5, 0.5, 1}, $CellContext`previousParams = <|
+        "p1" -> 0.9, "p2" -> 0.5, "p3" -> 0.5, "p4" -> 0.3, "q1" -> 0.68, 
+         "q2" -> 0.16, "q3" -> 0.36, "q4" -> 0|>, $CellContext`playerXpoints = 
+       282., $CellContext`playerYpoints = 
+       489., $CellContext`historyx = {
+        "C", "C", "C", "C", "D", "D", "D", "D", "D", "D", "D", "C", "C", "C", 
+         "D", "D", "C", "C", "C", "D", "D", "D", "D", "D", "D", "C", "C", "C",
+          "C", "D", "D", "D", "C", "C", "C", "D", "C", "D", "D", "D", "C", 
+         "C", "C", "C", "C", "C", "C", "D", "D", "D", "D", "C", "C", "C", "C",
+          "D", "D", "D", "C", "C", "D", "D", "D", "D", "D", "D", "D", "D", 
+         "D", "D", "D", "C", "D", "C", "C", "D", "D", "C", "D", "D", "D", "D",
+          "D", "C", "C", "C", "C", "D", "D", "D", "C", "D", "D", "D", "D", 
+         "D", "D", "D", "D", "C", "C", "C", "D", "D", "D", "D", "D", "D", "D",
+          "C", "D", "C", "C", "C", "C", "C", "C", "C", "C", "C", "D", "D", 
+         "C", "C", "C", "D", "D", "D", "D", "D", "C", "C", "D", "C", "C", "C",
+          "C", "C", "C", "D", "C", "C", "C", "C", "D", "C", "D", "D", "D", 
+         "C", "C", "C", "D", "D", "D", "D", "D", "C", "C", "C", "C", "C", "C",
+          "C", "C", "C", "D", "C", "C", "C", "C", "C", "C", "C", "D", "D", 
+         "C", "D", "D", "D", "D", "C", "C", "D", "C", "D", "D", "D", "D", "D",
+          "D", "D", "D", "D", "D", "C", "C", "C", "C", 
+         "C"}, $CellContext`historyy = {
+        "C", "D", "C", "D", "D", "D", "D", "D", "D", "D", "D", "D", "D", "D", 
+         "D", "D", "D", "D", "C", "D", "D", "D", "D", "D", "D", "D", "D", "C",
+          "C", "D", "D", "D", "D", "D", "D", "D", "D", "D", "D", "D", "C", 
+         "C", "C", "C", "C", "C", "D", "D", "D", "D", "D", "D", "D", "D", "D",
+          "D", "D", "D", "C", "C", "D", "D", "D", "D", "D", "D", "D", "D", 
+         "D", "D", "D", "D", "D", "C", "D", "D", "D", "D", "D", "D", "D", "D",
+          "D", "C", "C", "C", "D", "D", "D", "D", "D", "D", "D", "D", "D", 
+         "D", "D", "D", "D", "D", "D", "D", "D", "D", "D", "D", "D", "D", "D",
+          "D", "D", "C", "C", "D", "C", "C", "C", "C", "C", "D", "D", "D", 
+         "D", "C", "D", "D", "D", "D", "D", "D", "D", "C", "C", "C", "C", "D",
+          "C", "D", "D", "D", "C", "C", "C", "C", "C", "C", "D", "D", "D", 
+         "C", "C", "D", "D", "D", "D", "D", "D", "C", "C", "C", "D", "C", "C",
+          "D", "D", "D", "D", "C", "C", "C", "C", "C", "C", "D", "D", "D", 
+         "D", "D", "D", "D", "D", "D", "D", "D", "C", "D", "D", "D", "D", "D",
+          "D", "D", "D", "D", "D", "D", "D", "D", "D", "C"}, $CellContext`i = 
+       201, $CellContext`iterationCount$$ = 20, $CellContext`graphplot[
          Pattern[$CellContext`matrix, 
           Blank[]], 
          Pattern[$CellContext`distribution, 
@@ -2777,12 +2813,12 @@ $CellContext`i = 21, $CellContext`iterationCount$$ =
          Transpose[{$CellContext`p, $CellContext`q}], ChartStyle -> 
          "DarkRainbow", PlotRange -> {0, 1.5}, 
          ChartLabels -> {{"cc", "cd", "dc", "dd"}, None}, ChartLegends -> 
-         Placed[{"gracz X", "gracz Y"}, {0.45, 0.8}], 
-         FrameLabel -> {{"prawdopodobie\:0144stwo C of c", None}, {
-           "akcje gracza X i Y w ostatniej rundzie", 
-            "strategie graczy \n (c=wsp\[OAcute]\[LSlash]praca, \
-d=oszustwo)"}}, LabelStyle -> {13, Black}, PlotTheme -> "Detailed", ImageSize -> 
-         230, FrameTicks -> {{{0., 0.2, 0.4, 0.6, 0.8, 1.}, None}, {
+         Placed[{"player X", "player Y"}, {0.45, 0.8}], 
+         FrameLabel -> {{"probability of c", None}, {
+           "actions by X and Y in last round", 
+            "player strategies\n (c=cooperate, d=defect)"}}, 
+         LabelStyle -> {13, Black}, PlotTheme -> "Detailed", ImageSize -> 230,
+          FrameTicks -> {{{0., 0.2, 0.4, 0.6, 0.8, 1.}, None}, {
            Automatic, None}}, Frame -> True, 
          ImagePadding -> {{40, 20}, {60, 60}}, AspectRatio -> 0.75, 
          ChartElementFunction -> "GlassRectangle"], $CellContext`payoffchart[
@@ -2792,9 +2828,9 @@ d=oszustwo)"}}, LabelStyle -> {13, Black}, PlotTheme -> "Detailed", ImageSize ->
          LabelStyle -> {13, Black}, ChartElementFunction -> "GlassRectangle", 
          ChartStyle -> "DarkRainbow", ChartLabels -> {"X", "Y"}, PlotTheme -> 
          "Detailed", PlotRange -> {{0.2, 3.}, {0, 4.9}}, AspectRatio -> 1.25, 
-         FrameLabel -> {{"wynik", None}, {
-           "gracz", "\:015brednie otrzymane punkty"}}], $CellContext`eps = 
-       0.01}; Typeset`initDone$$ = True),
+         FrameLabel -> {{"score", None}, {
+           "player", "average payoffs"}}], $CellContext`eps = 0.01}; 
+     Typeset`initDone$$ = True),
     SynchronousInitialization->True,
     UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
     UnsavedVariables:>{Typeset`initDone$$},
@@ -2819,9 +2855,10 @@ d=oszustwo)"}}, LabelStyle -> {13, Black}, PlotTheme -> "Detailed", ImageSize ->
    3.941031834997319*^9}, 3.9410320669953823`*^9, 3.941032109639803*^9, 
    3.9410321850718946`*^9, 3.9410357972095633`*^9, 3.9410360840817223`*^9, 
    3.941036419114856*^9, 3.941036529882279*^9, 3.941036608522874*^9, 
-   3.941036697047327*^9, 3.9410367841214867`*^9, 3.941036821111918*^9},
- CellLabel->"Out[17]=",
- CellID->1460678275,ExpressionUUID->"598d4033-227b-48c6-8449-1039656aee89"]
+   3.941036697047327*^9, 3.9410367841214867`*^9, 3.941036821111918*^9, 
+   3.94112104903546*^9, 3.941121574200811*^9},
+ CellLabel->"Out[28]=",
+ CellID->1726504733,ExpressionUUID->"fddaf58b-3e5d-4641-b48a-753a81328ca7"]
 }, Open  ]],
 
 Cell[BoxData["P"], "Input",
@@ -12995,8 +13032,9 @@ Cell[BoxData[
                     TagBox[
                     GridBox[{{
                     TemplateBox[{
-                    CheckboxBox[False, {False, 
-                    "Elementary School K-2 Mathematics"}], "\" \"", 
+                    CheckboxBox[
+                    False, {False, "Elementary School K-2 Mathematics"}], 
+                    "\" \"", 
                     StyleBox[
                     "\"Elementary School K-2 Mathematics\"", FontSize -> 12, 
                     Editable -> False, StripOnInput -> False]}, 
@@ -13129,9 +13167,9 @@ Cell[BoxData[
                     TemplateBox[{
                     CheckboxBox[False, {False, "Exponents and Logarithms"}], 
                     "\" \"", 
-                    StyleBox[
-                    "\"Exponents and Logarithms\"", FontSize -> 12, Editable -> 
-                    False, StripOnInput -> False]}, "RowDefault"]}, {
+                    StyleBox["\"Exponents and Logarithms\"", FontSize -> 12, 
+                    Editable -> False, StripOnInput -> False]}, 
+                    "RowDefault"]}, {
                     TemplateBox[{
                     CheckboxBox[False, {False, "Hyperbolic Functions"}], 
                     "\" \"", 
@@ -13177,8 +13215,9 @@ Cell[BoxData[
                     StripOnInput -> False]}, "RowDefault"]}, {
                     TemplateBox[{
                     CheckboxBox[False, {False, "Pi"}], "\" \"", 
-                    StyleBox["\"Pi\"", FontSize -> 12, Editable -> False, 
-                    StripOnInput -> False]}, "RowDefault"]}, {
+                    StyleBox[
+                    "\"Pi\"", FontSize -> 12, Editable -> False, StripOnInput -> 
+                    False]}, "RowDefault"]}, {
                     TemplateBox[{
                     CheckboxBox[False, {False, "Polynomials"}], "\" \"", 
                     StyleBox[
@@ -13267,9 +13306,10 @@ Cell[BoxData[
                     CheckboxBox[
                     False, {False, 
                     "High School Algebra II and Trigonometry"}], "\" \"", 
-                    StyleBox["\"High School Algebra II and Trigonometry\"", 
-                    FontSize -> 12, Editable -> False, StripOnInput -> 
-                    False]}, "RowDefault"]}, {
+                    StyleBox[
+                    "\"High School Algebra II and Trigonometry\"", FontSize -> 
+                    12, Editable -> False, StripOnInput -> False]}, 
+                    "RowDefault"]}, {
                     TemplateBox[{
                     CheckboxBox[False, {False, "High School Precalculus"}], 
                     "\" \"", 
@@ -13304,9 +13344,8 @@ Cell[BoxData[
                     False, StripOnInput -> False]}, "RowDefault"]}, {
                     TemplateBox[{
                     CheckboxBox[False, {False, "Vector Algebra"}], "\" \"", 
-                    StyleBox[
-                    "\"Vector Algebra\"", FontSize -> 12, Editable -> False, 
-                    StripOnInput -> False]}, "RowDefault"]}}, 
+                    StyleBox["\"Vector Algebra\"", FontSize -> 12, Editable -> 
+                    False, StripOnInput -> False]}, "RowDefault"]}}, 
                     GridBoxAlignment -> {"Columns" -> {{Left}}}, 
                     DefaultBaseStyle -> "Column", 
                     GridBoxItemSize -> {"Columns" -> {{Automatic}}, 
@@ -14019,9 +14058,8 @@ Cell[BoxData[
                     GridBox[{{
                     TemplateBox[{
                     CheckboxBox[False, {False, "Golden Ratio"}], "\" \"", 
-                    StyleBox[
-                    "\"Golden Ratio\"", FontSize -> 12, Editable -> False, 
-                    StripOnInput -> False]}, "RowDefault"]}, {
+                    StyleBox["\"Golden Ratio\"", FontSize -> 12, Editable -> 
+                    False, StripOnInput -> False]}, "RowDefault"]}, {
                     TemplateBox[{
                     CheckboxBox[False, {False, "Mathematics Problems"}], 
                     "\" \"", 
@@ -14835,11 +14873,10 @@ Cell[BoxData[
                     TemplateBox[{
                     CheckboxBox[False, {False, "Theory of Computation"}], 
                     "\" \"", 
-                    StyleBox[
-                    "\"Theory of Computation\"", FontSize -> 12, Editable -> 
-                    False, StripOnInput -> False]}, "RowDefault"]}}, 
-                    GridBoxAlignment -> {"Columns" -> {{Left}}}, 
-                    DefaultBaseStyle -> "Column", 
+                    StyleBox["\"Theory of Computation\"", FontSize -> 12, 
+                    Editable -> False, StripOnInput -> False]}, 
+                    "RowDefault"]}}, GridBoxAlignment -> {
+                    "Columns" -> {{Left}}}, DefaultBaseStyle -> "Column", 
                     GridBoxItemSize -> {"Columns" -> {{Automatic}}, 
                     "Rows" -> {{Automatic}}}], "Column"], ImageMargins -> 0], 
                     "\[SpanFromLeft]"}}, 
@@ -14888,9 +14925,9 @@ Cell[BoxData[
                     GridBox[{{
                     TemplateBox[{
                     CheckboxBox[False, {False, "Cellular Automata"}], "\" \"", 
-                    StyleBox["\"Cellular Automata\"", FontSize -> 12, 
-                    Editable -> False, StripOnInput -> False]}, 
-                    "RowDefault"]}, {
+                    StyleBox[
+                    "\"Cellular Automata\"", FontSize -> 12, Editable -> 
+                    False, StripOnInput -> False]}, "RowDefault"]}, {
                     TemplateBox[{
                     CheckboxBox[False, {False, "Fractals"}], "\" \"", 
                     StyleBox[
@@ -15019,9 +15056,8 @@ Cell[BoxData[
                     "RowDefault"]}, {
                     TemplateBox[{
                     CheckboxBox[False, {False, "Macroeconomics"}], "\" \"", 
-                    StyleBox[
-                    "\"Macroeconomics\"", FontSize -> 12, Editable -> False, 
-                    StripOnInput -> False]}, "RowDefault"]}, {
+                    StyleBox["\"Macroeconomics\"", FontSize -> 12, Editable -> 
+                    False, StripOnInput -> False]}, "RowDefault"]}, {
                     TemplateBox[{
                     CheckboxBox[False, {False, "Microeconomics"}], "\" \"", 
                     StyleBox[
@@ -15161,8 +15197,7 @@ Cell[BoxData[
                     "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
                     "Column"], ImageMargins -> 0], "\[SpanFromLeft]"}}, 
                    GridBoxAlignment -> {"Columns" -> {{Left}}}, AutoDelete -> 
-                   False, 
-                   GridBoxItemSize -> {
+                   False, GridBoxItemSize -> {
                     "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
                    GridBoxSpacings -> {
                     "Columns" -> {{0.2}}, "Rows" -> {{0.5}}}, 
@@ -15201,9 +15236,8 @@ Cell[BoxData[
                     TemplateBox[{
                     CheckboxBox[
                     False, {False, "Elementary School K-2 Science"}], "\" \"", 
-                    StyleBox[
-                    "\"Elementary School K-2 Science\"", FontSize -> 12, 
-                    Editable -> False, StripOnInput -> False]}, 
+                    StyleBox["\"Elementary School K-2 Science\"", FontSize -> 
+                    12, Editable -> False, StripOnInput -> False]}, 
                     "RowDefault"]}, {
                     TemplateBox[{
                     CheckboxBox[
@@ -15565,9 +15599,9 @@ Cell[BoxData[
                     False, StripOnInput -> False]}, "RowDefault"]}, {
                     TemplateBox[{
                     CheckboxBox[False, {False, "General Chemistry"}], "\" \"", 
-                    StyleBox[
-                    "\"General Chemistry\"", FontSize -> 12, Editable -> 
-                    False, StripOnInput -> False]}, "RowDefault"]}, {
+                    StyleBox["\"General Chemistry\"", FontSize -> 12, 
+                    Editable -> False, StripOnInput -> False]}, 
+                    "RowDefault"]}, {
                     TemplateBox[{
                     CheckboxBox[False, {False, "Inorganic Chemistry"}], 
                     "\" \"", 
@@ -15799,8 +15833,9 @@ Cell[BoxData[
                     StripOnInput -> False]}, "RowDefault"]}, {
                     TemplateBox[{
                     CheckboxBox[False, {False, "College Physics"}], "\" \"", 
-                    StyleBox["\"College Physics\"", FontSize -> 12, Editable -> 
-                    False, StripOnInput -> False]}, "RowDefault"]}, {
+                    StyleBox[
+                    "\"College Physics\"", FontSize -> 12, Editable -> False, 
+                    StripOnInput -> False]}, "RowDefault"]}, {
                     TemplateBox[{
                     CheckboxBox[False, {False, "Electromagnetism"}], "\" \"", 
                     
@@ -16094,8 +16129,7 @@ Cell[BoxData[
                     False, StripOnInput -> False]}, "RowDefault"]}, {
                     TemplateBox[{
                     CheckboxBox[False, {False, "Trees"}], "\" \"", 
-                    StyleBox[
-                    "\"Trees\"", FontSize -> 12, Editable -> False, 
+                    StyleBox["\"Trees\"", FontSize -> 12, Editable -> False, 
                     StripOnInput -> False]}, "RowDefault"]}}, 
                     GridBoxAlignment -> {"Columns" -> {{Left}}}, 
                     DefaultBaseStyle -> "Column", 
